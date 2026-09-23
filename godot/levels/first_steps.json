@@ -1,11 +1,36 @@
 {
   "id": "first-steps",
   "title": "First Steps",
-  "scope": "Control/retry slice, not the proposed full three-zone course",
-  "width": 960,
+  "scope": "Starter control/retry slice (x 0-960, unchanged) plus Zone 03 'Pick your line' added for walker-jumpman-zhaohui-li",
+  "width": 1600,
   "fall_y": 430,
   "spawn": [64, 320],
-  "solids": [[0, 320, 448, 64], [512, 320, 224, 64], [784, 320, 176, 64], [160, 304, 48, 16], [576, 288, 48, 32]],
-  "hazards": [[320, 304, 24, 16]],
-  "finish": [916, 264, 24, 56]
+  "solids": [
+    [0, 320, 448, 64],
+    [512, 320, 224, 64],
+    [784, 320, 176, 64],
+    [160, 304, 48, 16],
+    [576, 288, 48, 32],
+
+    [1016, 288, 112, 32],
+    [1152, 320, 232, 64],
+    [1168, 248, 56, 12],
+    [1264, 216, 80, 12],
+    [1392, 216, 96, 12],
+    [1448, 320, 152, 64]
+  ],
+  "hazards": [
+    [320, 304, 24, 16],
+    [1272, 304, 24, 16]
+  ],
+  "finish": [1548, 264, 24, 56],
+  "hills": [100, 470, 770, 1100, 1430],
+  "labels": [
+    {"at": [33, 251], "text": "01 / GET MOVING", "size": 15},
+    {"at": [33, 273], "text": "Read the landing. Then jump.", "size": 13},
+    {"at": [474, 227], "text": "02 / MIND THE GAP", "size": 15},
+    {"at": [990, 118], "text": "03 / PICK YOUR LINE", "size": 15},
+    {"at": [990, 138], "text": "Low road: spikes, then a pit.   High line: climb, then glide.", "size": 12},
+    {"at": [1506, 225], "text": "FINISH", "size": 15}
+  ]
 }

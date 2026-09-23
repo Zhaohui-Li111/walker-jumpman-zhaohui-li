@@ -182,12 +182,16 @@ func _draw() -> void:
 	var font := ThemeDB.fallback_font
 	var ink := Color("25354a")
 	# All visual assets are original Godot vector drawing, not recovered art.
-	draw_rect(Rect2(-400, -200, 1800, 900), Color("f6f3ec"))
-	for x in range(0, 961, 32):
+	# Backdrop, grid and hills are derived from level.width / level.hills rather
+	# than the starter's literals, so widening the level cannot leave an unpainted
+	# strip past the old 960/1400 edges. See CHANGE-BRIEF.md section 3.
+	var width := int(level.width)
+	draw_rect(Rect2(-400, -200, width + 800, 900), Color("f6f3ec"))
+	for x in range(0, width + 1, 32):
 		draw_line(Vector2(x, 80), Vector2(x, 320), Color("e7e5df"), 1)
 	for y in range(96, 321, 32):
-		draw_line(Vector2(0, y), Vector2(960, y), Color("e7e5df"), 1)
-	for x in [100, 470, 770]:
+		draw_line(Vector2(0, y), Vector2(width, y), Color("e7e5df"), 1)
+	for x in level.hills:
 		draw_colored_polygon(PackedVector2Array([Vector2(x-90,320),Vector2(x+50,180),Vector2(x+190,320)]), Color("e4e8e3"))
 	for entry in level.solids:
 		var r := Rect2(entry[0], entry[1], entry[2], entry[3])
@@ -195,14 +199,20 @@ func _draw() -> void:
 		draw_rect(Rect2(r.position, Vector2(r.size.x, 4)), Color("438e7d"))
 		for x in range(int(r.position.x)+12, int(r.end.x), 24):
 			draw_line(Vector2(x, r.position.y+12), Vector2(x+7, r.position.y+19), Color("405166"), 1)
+	# Spike baseline and height come from the hazard rect itself. The starter
+	# pinned both to y=320; the second cluster happens to sit at y=320 too, so
+	# that literal would still have *looked* right while being wrong by luck.
 	for entry in level.hazards:
+		var base: float = entry[1] + entry[3]
+		var tip: float = entry[1]
 		for i in range(3):
 			var x: float = entry[0] + i*8
-			draw_colored_polygon(PackedVector2Array([Vector2(x,320),Vector2(x+4,304),Vector2(x+8,320)]), Color("d24e42"))
+			draw_colored_polygon(PackedVector2Array([Vector2(x,base),Vector2(x+4,tip),Vector2(x+8,base)]), Color("d24e42"))
+	# Flag pole stands on the bottom of the finish trigger, not on a literal 320.
 	var finish_x: float = level.finish[0]
-	draw_line(Vector2(finish_x+3, 320), Vector2(finish_x+3, 250), ink, 3)
-	draw_colored_polygon(PackedVector2Array([Vector2(finish_x+5,250),Vector2(finish_x+32,260),Vector2(finish_x+5,274)]), Color("287c68"))
-	draw_string(font, Vector2(33, 251), "01 / GET MOVING", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
-	draw_string(font, Vector2(33, 273), "Read the landing. Then jump.", HORIZONTAL_ALIGNMENT_LEFT, -1, 13, ink)
-	draw_string(font, Vector2(474, 227), "02 / MIND THE GAP", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
-	draw_string(font, Vector2(878, 225), "FINISH", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
+	var finish_base: float = level.finish[1] + level.finish[3]
+	var finish_top: float = level.finish[1] - 14.0
+	draw_line(Vector2(finish_x+3, finish_base), Vector2(finish_x+3, finish_top), ink, 3)
+	draw_colored_polygon(PackedVector2Array([Vector2(finish_x+5,finish_top),Vector2(finish_x+32,finish_top+10),Vector2(finish_x+5,finish_top+24)]), Color("287c68"))
+	for entry in level.labels:
+		draw_string(font, Vector2(entry.at[0], entry.at[1]), entry.text, HORIZONTAL_ALIGNMENT_LEFT, -1, int(entry.size), ink)
