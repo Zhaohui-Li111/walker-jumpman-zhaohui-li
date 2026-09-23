@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "game": {
+    "name": "walker-jumpman-zhaohui-li",
+    "build_id": "0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9"
+  },
+  "captures": {
+    "run-01": {
+      "path": "capture/run-01.avi",
+      "sha256": "cf59930476aa74b782919b02bcba9195b55719cd893a450937131cc9e5b1547c",
+      "build_id": "0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9",
+      "method": "scripted-input",
+      "input_log": "capture/run-01-inputs.jsonl"
+    }
+  },
+  "features": [
+    {
+      "id": "menu-and-start",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B02",
+          "start_s": 0.0,
+          "action_s": 1.167,
+          "end_s": 1.833,
+          "observation": "Title card is on screen with the level behind it; Enter is pressed and the card clears to a live player at the spawn point.",
+          "riff": "The menu is not a separate scene - the level is already running behind it. That is why Enter starts instantly with no load."
+        }
+      ]
+    },
+    {
+      "id": "move-left-and-right",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B02",
+          "start_s": 1.333,
+          "action_s": 2.633,
+          "end_s": 2.767,
+          "observation": "D drives the character right past x=100, then A drives it back left; the cargo pack and head fin flip across the body at the turn.",
+          "riff": "Facing is readable from the outline alone, before you can see the eye - that is what the asymmetric pack buys at eighteen pixels wide."
+        }
+      ]
+    },
+    {
+      "id": "jump-fixed-height",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B04",
+          "start_s": 5.367,
+          "action_s": 6.117,
+          "end_s": 6.667,
+          "observation": "One Space press lifts the body onto the first step and it lands; holding the key does not produce a second jump.",
+          "riff": "One fixed-height jump, no double jump, six ticks of coyote and six of buffer. Every landing in the level is authored against that one arc."
+        }
+      ]
+    },
+    {
+      "id": "manual-retry",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B03",
+          "start_s": 2.633,
+          "action_s": 2.9,
+          "end_s": 3.133,
+          "observation": "R returns the player to the spawn point mid-run; the retry counter in the HUD stays where it was.",
+          "riff": "R is a restart, not a death. Separating those two means the retry count still measures mistakes rather than impatience."
+        }
+      ]
+    },
+    {
+      "id": "hazard-spikes",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B03",
+          "start_s": 2.9,
+          "action_s": 4.633,
+          "end_s": 4.967,
+          "observation": "The player walks into the spike cluster without jumping; the run stops and the card reads 'Watch the spikes'.",
+          "riff": "The hazard trigger is three exact triangles, not one oversized box - the collision matches the shape you can see."
+        }
+      ]
+    },
+    {
+      "id": "auto-retry",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B03",
+          "start_s": 4.633,
+          "action_s": 5.2,
+          "end_s": 5.533,
+          "observation": "About half a second after the death the player is back at the spawn point and playable, with no menu and no lives counter.",
+          "riff": "A cheap retry changes what the level can ask for. It does not tell us whether a first-time player saw the danger coming."
+        }
+      ]
+    },
+    {
+      "id": "starter-zones-route",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B04",
+          "start_s": 5.367,
+          "action_s": 10.717,
+          "end_s": 10.917,
+          "observation": "A clean run over the two steps, the spike cluster and both gaps of the original course, ending past x=880.",
+          "riff": "This is the starter's route, unchanged in the level data. The extension had to leave it walkable, and it does."
+        }
+      ]
+    },
+    {
+      "id": "hud-progress-timer-retries",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B04",
+          "start_s": 6.367,
+          "action_s": 10.717,
+          "end_s": 10.917,
+          "observation": "The progress bar advances across the top, the timer counts up and the retry count reads 01 after the earlier death.",
+          "riff": "The bar is derived from spawn and the finish trigger. With the starter's hard-coded span it would have pegged at full the moment the new zone began."
+        }
+      ]
+    },
+    {
+      "id": "pause-and-resume",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B05",
+          "start_s": 10.717,
+          "action_s": 11.8,
+          "end_s": 12.1,
+          "observation": "Escape freezes the body and the timer mid-run and shows the pause card; Enter resumes from exactly the same position.",
+          "riff": "Pause stops the clock as well as the body, so a paused run cannot be used to farm a better time."
+        }
+      ]
+    },
+    {
+      "id": "zone03-fork",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B06",
+          "start_s": 12.1,
+          "action_s": 13.117,
+          "end_s": 13.75,
+          "observation": "A jump across the gap at the end of the original course lands on a raised pad; from it both the low road and the climbing ledges are visible at once.",
+          "riff": "The decision is placed where you can see both answers before committing, and the climb back up is only thirty-two pixels - the fork does not punish curiosity."
+        }
+      ]
+    },
+    {
+      "id": "zone03-low-road",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B07",
+          "start_s": 13.783,
+          "action_s": 15.35,
+          "end_s": 16.05,
+          "observation": "On the low road the player jumps the second spike cluster at speed and lands back on the flat.",
+          "riff": "The low road trades precision for exposure: wide flat landings, but a hazard and a pit between you and the flag."
+        }
+      ]
+    },
+    {
+      "id": "zone03-pit-fall",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B07",
+          "start_s": 15.733,
+          "action_s": 16.483,
+          "end_s": 16.9,
+          "observation": "The player runs off the end of the low road into the pit and falls past the kill line; the card reads 'Missed the landing', not 'Watch the spikes'.",
+          "riff": "Two failure modes, two different sentences. The retry card tells you which mistake you actually made before it sends you back."
+        }
+      ]
+    },
+    {
+      "id": "zone03-high-line",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B08",
+          "start_s": 22.717,
+          "action_s": 24.383,
+          "end_s": 25.883,
+          "observation": "The other line: a step up, then two ledges above the low road, with no hazard on the route and the spikes visible below.",
+          "riff": "An early draft stacked these ledges directly over the low road. The body is twenty-eight pixels tall and jumps fifty-six, so the jump underneath needed eighty-four pixels of headroom and had forty-eight - it clipped the ledge and died. The fix was geometry, not tuning."
+        }
+      ]
+    },
+    {
+      "id": "finish-and-results",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B09",
+          "start_s": 25.783,
+          "action_s": 26.783,
+          "end_s": 27.783,
+          "observation": "The high line runs off its last ledge onto the finish pad and reaches the relocated flag; the results card shows the time and the retry count.",
+          "riff": "The flag moved from x=916 to x=1548, so the original route on its own can no longer win. The high line ends by falling, not jumping - that is what the extra climb buys."
+        }
+      ]
+    },
+    {
+      "id": "replay",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B09",
+          "start_s": 27.95,
+          "action_s": 28.117,
+          "end_s": 28.7,
+          "observation": "Enter on the results card starts a fresh attempt with the timer and the retry count both back at zero.",
+          "riff": "Replay resets the run state rather than reloading the scene, which is why it is instant."
+        }
+      ]
+    },
+    {
+      "id": "return-to-menu",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "run-01",
+          "beat_id": "B09",
+          "start_s": 28.783,
+          "action_s": 29.45,
+          "end_s": 30.223,
+          "observation": "P pauses the new attempt and M returns to the title card, which can be started again.",
+          "riff": "Pause and menu are separate states, so M cannot be hit by accident mid-run."
+        }
+      ]
+    },
+    {
+      "id": "pause-on-focus-loss",
+      "status": "implemented",
+      "evidence": []
+    },
+    {
+      "id": "cherries",
+      "status": "planned",
+      "reason": "Proposed in the starter's GDD (twenty optional collectibles). Not built in this slice and not added by this extension.",
+      "evidence": []
+    },
+    {
+      "id": "audio",
+      "status": "planned",
+      "reason": "No audio buses, sound files or music anywhere in the source. The game is silent by construction; no sound was invented for the film.",
+      "evidence": []
+    },
+    {
+      "id": "settings-and-remapping",
+      "status": "planned",
+      "reason": "GDD proposes a settings screen with key remapping and persistence. No settings scene exists; the input map is built in code at startup.",
+      "evidence": []
+    },
+    {
+      "id": "moving-platforms",
+      "status": "planned",
+      "reason": "Explicitly out of scope in the starter's MVP and not added here. All solids are static bodies.",
+      "evidence": []
+    },
+    {
+      "id": "web-export",
+      "status": "planned",
+      "reason": "Export templates are not installed and no export was produced. This is a source-only release.",
+      "evidence": []
+    }
+  ]
+}

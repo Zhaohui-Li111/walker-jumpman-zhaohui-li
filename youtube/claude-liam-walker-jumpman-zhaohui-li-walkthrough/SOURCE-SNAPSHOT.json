@@ -1,0 +1,133 @@
+{
+  "method": "sha256 over sorted \"<relpath>\\\\0<sha256(file)>\\\\n\" for every file under godot/, excluding the .godot engine cache",
+  "root": "godot/",
+  "build_id": "0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9",
+  "file_count": 25,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "531d0d253cec1addb97b2cb2d144b6589ff934513eb9c9b8cf882cb49e4c0c32",
+      "bytes": 8
+    },
+    {
+      "path": "features/player/player.gd",
+      "sha256": "270b6c29dfeb5e606dfac40401d4cb35e484d14862ff74147f7407d178e861ee",
+      "bytes": 6294
+    },
+    {
+      "path": "features/player/player.gd.uid",
+      "sha256": "be96c2e71cbd69482fa0d107dfb1500a0054d2b963e9ba312e265bef985f0454",
+      "bytes": 20
+    },
+    {
+      "path": "features/player/tuning.gd",
+      "sha256": "7a09e96ef11bfa3e1e3b00849e84ed15b453a2e2780b9c94c90c376aea62aa37",
+      "bytes": 393
+    },
+    {
+      "path": "features/player/tuning.gd.uid",
+      "sha256": "9411c240407f1c4afbb5e85649ef3215765190421bc3621a7457e065e036751a",
+      "bytes": 19
+    },
+    {
+      "path": "game/main.tscn",
+      "sha256": "017da6e141ad6f6199a9219208483c82cacd257210dbaa6b1184a27157a63a2f",
+      "bytes": 168
+    },
+    {
+      "path": "game/session.gd",
+      "sha256": "7a16f5f31981449847a7d5029bd4075964cfac7169a2f35fd3d10d40145e7228",
+      "bytes": 8024
+    },
+    {
+      "path": "game/session.gd.uid",
+      "sha256": "cbd9b4dc192752918a54c94b364b7891028856b6de6a4391d924522985ffeb77",
+      "bytes": 20
+    },
+    {
+      "path": "levels/first_steps.json",
+      "sha256": "d81f30ef710397e7f3e73ca9a3b09712b6886e15233ccf6850d98ec267a536c6",
+      "bytes": 1122
+    },
+    {
+      "path": "project.godot",
+      "sha256": "8539dc2f48b83688211d369b4bc02f7f2fee8df8927eb240d4495bc33410030d",
+      "bytes": 974
+    },
+    {
+      "path": "tests/capture_character.gd",
+      "sha256": "c3836a4afbe1399f96dd692d2038de98a63908cb89a54083317306c7511082b7",
+      "bytes": 2962
+    },
+    {
+      "path": "tests/capture_game.gd",
+      "sha256": "6e69529f8b239c3fd1b4645ef428242fe0375c98a958abe186d7d1f8392ed1e5",
+      "bytes": 3246
+    },
+    {
+      "path": "tests/capture_game.gd.uid",
+      "sha256": "60af73a3bc1bbf2fb747f628c6b19d474e5d8ec63086693d7a3662c343635625",
+      "bytes": 20
+    },
+    {
+      "path": "tests/capture_map.gd",
+      "sha256": "10c55c73fc9b1d7860d4f0e529747e57123f23f5152a94746973c593d4c24630",
+      "bytes": 706
+    },
+    {
+      "path": "tests/character_board.gd",
+      "sha256": "672a4ca49f13249b0ba80bfcf65f2fb67ff3eed933e1d4bdf0e1bf4388120079",
+      "bytes": 813
+    },
+    {
+      "path": "tests/map_board.gd",
+      "sha256": "50a104880769f9e1e2f648cb68f3af1bf44b4562abb371d5664233a1dbaf7ef9",
+      "bytes": 4493
+    },
+    {
+      "path": "tests/probe_route.gd",
+      "sha256": "1851123bda8e80f6a28042a378b6964873b1d15568b8e89c04422513cf87a3d6",
+      "bytes": 1577
+    },
+    {
+      "path": "tests/route_driver.gd",
+      "sha256": "d00c9c6f7f7d70ecd3651dde984faf1bbce5d5be41c1022b3a33d241b52e07b4",
+      "bytes": 1591
+    },
+    {
+      "path": "tests/route_driver.gd.uid",
+      "sha256": "6e51ae14383d23db51a043c2455ae9a4b9b972304db25c9422dbe41d698af41b",
+      "bytes": 20
+    },
+    {
+      "path": "tests/test_game.gd",
+      "sha256": "dc90b6be9779d1cf1fc5e9c116eb1f848388b35673aabb8fa2f2b38cc04a43c2",
+      "bytes": 8555
+    },
+    {
+      "path": "tests/test_game.gd.uid",
+      "sha256": "57933fea45074e0597f2fb3f474e69944d6198c1f432274187c9a10bee0c31dc",
+      "bytes": 20
+    },
+    {
+      "path": "tests/test_keyboard.gd",
+      "sha256": "39b5d37039cee469aa6a87ab45acc852d1c55a7ebcebca5ec328d9d71413c6c9",
+      "bytes": 2606
+    },
+    {
+      "path": "tests/test_keyboard.gd.uid",
+      "sha256": "6ea68e4d1bb1c113e9454aca6e4dc08c148cbcf6eeefb5b301c289dcc718f25e",
+      "bytes": 19
+    },
+    {
+      "path": "ui/hud.gd",
+      "sha256": "8e214517f6ff44b28f5a4866f15c0d95c4efe47794d2cac14c4daafc41cd83c5",
+      "bytes": 2682
+    },
+    {
+      "path": "ui/hud.gd.uid",
+      "sha256": "d2eaf3c885a55bcd31e9b2f36d3a5355f10105da426e96a9685434da00b28330",
+      "bytes": 20
+    }
+  ]
+}

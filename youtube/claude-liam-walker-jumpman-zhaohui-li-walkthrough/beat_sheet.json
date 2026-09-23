@@ -1,0 +1,496 @@
+{
+  "metadata": {
+    "title": "Walker Jumpman, Extended",
+    "slug": "claude-liam-walker-jumpman-zhaohui-li-walkthrough",
+    "topic": "Extending a Godot platformer: a new character and a branching final zone",
+    "kind": "godot-walkthrough",
+    "mode": "walker",
+    "brand": "claude-liam",
+    "channel": "@NikBearBrown",
+    "channel_title": "Nik Bear Brown",
+    "folderLabel": "@NikBearBrown",
+    "persona": "Liam",
+    "presenter": "Liam",
+    "in_for_bear": true,
+    "greeting": "Namaste, Liam",
+    "audience": "practitioners and makers following the channel's Claude workflows",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "aspect_ratio": "16:9",
+    "fps": 30,
+    "captions": false,
+    "game": {
+      "name": "walker-jumpman-zhaohui-li",
+      "starter": "walker-jumpman by Nik Bear Brown — https://github.com/nikbearbrown/walker-jumpman",
+      "source_revision": "cc8ae01",
+      "build_id": "0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9",
+      "godot": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "note": "Gameplay beats are real engine capture driven by scripted keyboard input and are labelled as such on screen. Coverage contract in coverage.json; capture provenance in CAPTURE.md."
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "COLD OPEN LAW — ClaudeComposerAsk. walker mode B00. The prompt is an ILLUSTRATIVE RECONSTRUCTION of the Walker ask for this game, not a historical transcript: this project was extended from an existing starter, not generated from a blank Walker run. No invented build receipts. Liam named in first breath.",
+      "narration_text": "Namaste — this is Liam, in for Bear. Zhaohui Li took walker-jumpman, Bear's one-jump Godot platformer, and extended it: a character you can actually read at eighteen pixels wide, and a final zone that makes you pick a route. Everything after this card is the real build, played through its own keyboard input.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 21,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card fades in on the cream page"
+          },
+          {
+            "at": "0.12",
+            "event": "greeting 'Namaste, Liam' appears above the composer"
+          },
+          {
+            "at": "0.3",
+            "event": "the Walker ask types in"
+          },
+          {
+            "at": "0.66",
+            "event": "send button arms terracotta"
+          },
+          {
+            "at": "0.78",
+            "event": "three RESULT lines land beneath the card"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Namaste, Liam",
+            "topic": "WALKER · GODOT WALKTHROUGH",
+            "segment": "Walker Jumpman, Extended",
+            "command": "Please use Walker to convert my game design document about a one-jump 2D platformer — a courier automaton crossing gaps and spikes, ending in a zone that forks into a fast hazardous road and a slower clean climb — into a playable Godot project.",
+            "runningText": "reconstructed ask · extended from walker-jumpman…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Character drawn in _draw(), collider untouched.",
+              "Zone 03 forks at a raised pad.",
+              "Finish moved 916 to 1548."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "role_note": "EXECUTIVE-SUMMARY LAW — hesitant writer BLUF. Misconception corrected is the reel's actual one: 'a new game' -> 'an extension of Bear's starter'. Whole phrase is the trigger so the corrected sentence stands alone. lead_silence_s gives the typing a head start; seed fixed for this slug.",
+      "narration_text": "Not a new game — an extension. The starter's two zones are byte-identical in the level data and still walkable. What changed is who you play as, and where the level stops.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 12,
+      "lead_silence_s": 0.8,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on-correct",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "cream page; typing begins during the lead silence"
+          },
+          {
+            "at": "0.2",
+            "event": "'walker-jumpman-zhaohui-li is a new game:' types, then pauses"
+          },
+          {
+            "at": "0.45",
+            "event": "'a new game' struck through in terracotta"
+          },
+          {
+            "at": "0.6",
+            "event": "'an extension of Bear's starter' types in its place"
+          },
+          {
+            "at": "0.85",
+            "event": "corrected sentence settles before the cut"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "contextTitle": "BLUF",
+            "text": "walker-jumpman-zhaohui-li is a new game:\nnew character, one more zone, same jump.",
+            "triggerWords": "a new game",
+            "replacementWords": "an extension of Bear's starter",
+            "fontSize": 84,
+            "lineSpacing": 2.7,
+            "align": "center",
+            "seed": "8821",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "charMs": 8,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5"
+          }
+        }
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "OPEN",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 0.00-2.80s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "Enter starts it. No load screen — the level was already running behind that card.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 2.8,
+      "shot": {
+        "type": "FOOTAGE",
+        "class": "SHOW",
+        "source": "capture",
+        "motion": "none",
+        "capture": "run-01",
+        "capture_start_s": 0.0,
+        "capture_end_s": 2.8,
+        "label": "SCRIPTED INPUT · native 4K engine capture",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title card over the live level"
+          },
+          {
+            "at": "0.35",
+            "event": "Enter: card clears, player is at the spawn point"
+          },
+          {
+            "at": "0.6",
+            "event": "D then A — the cargo pack and head fin flip across the body"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "MECHANISM",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 2.45-5.70s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "R restarts without counting a death. The spikes do count — and half a second later you are playable again.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 3.25,
+      "shot": {
+        "type": "FOOTAGE",
+        "class": "SHOW",
+        "source": "capture",
+        "motion": "none",
+        "capture": "run-01",
+        "capture_start_s": 2.45,
+        "capture_end_s": 5.7,
+        "label": "SCRIPTED INPUT · native 4K engine capture",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "R: player snaps back to spawn, retry counter unchanged"
+          },
+          {
+            "at": "0.45",
+            "event": "walks into the spikes, run stops, card reads 'Watch the spikes'"
+          },
+          {
+            "at": "0.8",
+            "event": "auto-retry drops the player back at spawn, running"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "MECHANISM",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 5.20-11.05s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "One fixed-height jump. No double jump, six ticks of coyote time, six of buffer. Every landing in this level is authored against that one arc.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 5.85,
+      "shot": {
+        "type": "FOOTAGE",
+        "class": "SHOW",
+        "source": "capture",
+        "motion": "none",
+        "capture": "run-01",
+        "capture_start_s": 5.2,
+        "capture_end_s": 11.05,
+        "label": "SCRIPTED INPUT · native 4K engine capture",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "Space: a single jump onto the first step"
+          },
+          {
+            "at": "0.4",
+            "event": "clears the spike cluster, then the first gap"
+          },
+          {
+            "at": "0.75",
+            "event": "second step and second gap; HUD progress bar advances"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "MECHANISM",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 10.55-14.00s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "Escape freezes the body and the clock. Then the new part: one jump across, and the level stops being a corridor.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 3.45,
+      "shot": {
+        "type": "FOOTAGE",
+        "class": "SHOW",
+        "source": "capture",
+        "motion": "none",
+        "capture": "run-01",
+        "capture_start_s": 10.55,
+        "capture_end_s": 14.0,
+        "label": "SCRIPTED INPUT · native 4K engine capture",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "Escape: pause card, timer frozen"
+          },
+          {
+            "at": "0.4",
+            "event": "Enter resumes from the same pixel"
+          },
+          {
+            "at": "0.75",
+            "event": "jump across the gap onto the fork pad — both routes visible"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "MECHANISM",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 13.50-17.05s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "Low road: fast, flat landings, one spike cluster to clear — and a pit that reads 'Missed the landing', not 'Watch the spikes'.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 3.55,
+      "shot": {
+        "type": "FOOTAGE",
+        "class": "SHOW",
+        "source": "capture",
+        "motion": "none",
+        "capture": "run-01",
+        "capture_start_s": 13.5,
+        "capture_end_s": 17.05,
+        "label": "SCRIPTED INPUT · native 4K engine capture",
+        "show": [
+          {
+            "at": "0.15",
+            "event": "drops right onto the low road"
+          },
+          {
+            "at": "0.4",
+            "event": "jumps the second spike cluster at speed"
+          },
+          {
+            "at": "0.8",
+            "event": "runs off the end into the pit; the card names the other failure"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "MECHANISM",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 17.00-30.23s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "The other line climbs. A step, then two ledges, no hazard on the route. An early draft stacked these ledges straight over the low road — and the jump underneath clipped them. The body is twenty-eight pixels tall and jumps fifty-six, so it needed eighty-four pixels of headroom and had forty-eight. The fix was geometry, not tuning. The ledge overhangs the finish pad, so the high line ends by falling. Flag, results, Enter, and it replays clean.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 13.23,
+      "shot": {
+        "type": "FOOTAGE",
+        "class": "SHOW",
+        "source": "capture",
+        "motion": "none",
+        "capture": "run-01",
+        "capture_start_s": 17.0,
+        "capture_end_s": 30.23,
+        "label": "SCRIPTED INPUT · native 4K engine capture",
+        "show": [
+          {
+            "at": "0.08",
+            "event": "step up, then ledge A, then ledge B — spikes visible below"
+          },
+          {
+            "at": "0.42",
+            "event": "runs off the last ledge and lands on the finish pad"
+          },
+          {
+            "at": "0.62",
+            "event": "reaches the relocated flag; results card shows time and retries"
+          },
+          {
+            "at": "0.82",
+            "event": "Enter replays from zero; P then M returns to the title card"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "VERDICT",
+      "role_note": "VERDICT — separates observed working features from what was not shown and what is untested. The focus-loss line is the accepted partial-coverage item; the playtest line is the honest limit of a scripted route.",
+      "narration_text": "Verdict. Sixteen implemented features shown running, two real deaths and two real recoveries, both fork routes finishing. One implemented feature is not on film: pause on focus loss, which an unattended capture cannot trigger — it is covered by a machine check instead. And this was a scripted route, not a person. It proves the geometry is reachable. It cannot tell you the level is fair.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "artifact-lines",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "verdict artifact page opens on cream"
+          },
+          {
+            "at": "0.2",
+            "event": "line 1 lands: what ran"
+          },
+          {
+            "at": "0.42",
+            "event": "line 2 lands: what is not on film"
+          },
+          {
+            "at": "0.64",
+            "event": "line 3 lands: what a scripted route cannot prove"
+          },
+          {
+            "at": "0.85",
+            "event": "line 4 lands: the one number that would settle it"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "walker-jumpman-zhaohui-li",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Shown running: 16 features, 2 deaths, 2 recoveries, both fork routes finish.",
+              "Not on film: pause on focus loss — unattended capture cannot lose focus.",
+              "Scripted input proves reachability, not fairness. No human playtest yet.",
+              "Untested: the fork-pad take-off window is calculated at ~46 px, never measured."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "HANDOFF",
+      "role_note": "HANDOFF LAW — Your Turn. The prompt extends this episode's idea into the viewer's own project and is read aloud verbatim, then discussed, before the invitation.",
+      "narration_text": "Your turn. Paste this: 'In my Godot platformer, measure the take-off window for every jump the level requires — sweep the jump position frame by frame and report the range that still lands.' That is the number I did not have. It turns is this jump fair into a measurement instead of an opinion. Run it on your own level and see which jump has the narrowest window — that one is where your players will quit.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 26,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "composer opens with greeting 'Your turn.'"
+          },
+          {
+            "at": "0.25",
+            "event": "the measurement prompt types in"
+          },
+          {
+            "at": "0.7",
+            "event": "send button arms terracotta"
+          },
+          {
+            "at": "0.82",
+            "event": "three RESULT lines land beneath"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · YOUR LEVEL",
+            "segment": "Measure The Window",
+            "command": "In my Godot platformer, measure the take-off window for every jump the level requires: sweep the jump position frame by frame with a scripted input driver and report, for each landing, the range of take-off positions that still land. Flag the narrowest one.",
+            "runningText": "sweeping take-off positions…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Per-landing take-off ranges measured.",
+              "Narrowest window flagged.",
+              "Check: is that the jump players quit on?"
+            ],
+            "animateTyping": true
+          }
+        }
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "OUTRO",
+      "role_note": "OUTRO LOCK (2026-09-18) — ClaudeTitleOutro, exact title restate, @NikBearBrown hardcoded, slug-seeded mascot, NO subline. SPOKEN, never scored: Liam re-reads the exact title then the handle, over a 1.0 s tail hold. No jingle, no music, no game audio. kind: outro_voice.",
+      "narration_text": "Walker Jumpman, Extended. At Nik Bear Brown.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "kind": "outro_voice",
+      "estimated_duration_s": 7,
+      "tail_hold_s": 1.0,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "mascot-title",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title 'Walker Jumpman, Extended.' on cream, EB Garamond"
+          },
+          {
+            "at": "0.3",
+            "event": "@NikBearBrown appears beneath"
+          },
+          {
+            "at": "0.5",
+            "event": "slug-seeded crisp-safe mascot animates under the handle"
+          },
+          {
+            "at": "0.85",
+            "event": "1 s silent tail hold"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Walker Jumpman, Extended",
+            "slug": "claude-liam-walker-jumpman-zhaohui-li-walkthrough"
+          }
+        }
+      }
+    }
+  ]
+}

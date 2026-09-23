@@ -22,4 +22,14 @@ credentials/
 *.p12
 *.pfx
 
+# Film reel: keep the paper trail (beat sheet, coverage, riff, QC), never the media.
+# The 4K capture alone is ~262 MB; renders are larger. Media lives in course storage.
+youtube/**/capture/
+youtube/**/media/
+youtube/**/clips/
+youtube/**/audio/
+youtube/**/mp3/
+youtube/**/renders/
+youtube/**/_qc/frames/
+
 # Git cannot ignore by size: inspect staged files before committing (>25 MB).
