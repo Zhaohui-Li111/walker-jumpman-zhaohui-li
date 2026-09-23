@@ -125,14 +125,49 @@ func run() -> void:
 	game.player.position = Vector2(415,432)
 	await steps(1)
 	check("fall-boundary", game.state == Game.State.DYING, {"state":game.state})
+	# Zone 03 forks, so one deterministic route no longer covers the level.
+	# Both lines must reach the relocated flag on ordinary inputs, with no deaths.
+	var low_road_apex := 999.0
+	for line in ["low", "high"]:
+		await fresh()
+		var route = Route.new(line)
+		var route_ticks := 0
+		while game.state == Game.State.PLAYING and route_ticks < 900:
+			route.step(game.player)
+			await steps(1)
+			route_ticks += 1
+			# Headroom witness: the highest the body gets while running the low
+			# road under the high line. A first draft of Zone 03 stacked the two
+			# lines, and the low road's spike jump clipped the ledge above it,
+			# cutting a 53 px jump to 12 px. This records that it does not.
+			if line == "low" and game.player.position.x > 1152.0 and game.player.position.x < 1400.0:
+				low_road_apex = minf(low_road_apex, game.player.position.y)
+		check("complete-real-route-%s" % line, game.state == Game.State.COMPLETE and game.deaths == 0, {"state":game.state,"deaths":game.deaths,"ticks":route_ticks,"position":str(game.player.position),"jump_marks_used":route.next_jump})
+	check("low-road-jump-not-clipped-by-high-line", low_road_apex <= 275.0, {"apex_feet_y":low_road_apex, "rise_px":320.0-low_road_apex})
+	# The original section must still be walkable, and must no longer be a win.
 	await fresh()
-	var route = Route.new()
-	var route_ticks := 0
-	while game.state == Game.State.PLAYING and route_ticks < 900:
-		route.step(game.player)
+	var old_route = Route.new("low")
+	var reached_old_end := false
+	for i in range(420):
+		old_route.step(game.player)
 		await steps(1)
-		route_ticks += 1
-	check("complete-real-route", game.state == Game.State.COMPLETE and game.deaths == 0, {"state":game.state,"deaths":game.deaths,"ticks":route_ticks,"position":str(game.player.position),"jump_marks_used":route.next_jump})
+		if game.player.position.x >= 916.0 and game.state == Game.State.PLAYING:
+			reached_old_end = true
+			break
+	check("starter-section-still-walkable", reached_old_end and game.deaths == 0, {"position":str(game.player.position),"deaths":game.deaths})
+	check("old-finish-no-longer-wins", game.state == Game.State.PLAYING and float(game.level.finish[0]) > 960.0, {"state":game.state,"finish_x":game.level.finish[0]})
+	# Both of Zone 03's failure modes are real, and they report different reasons.
+	await fresh()
+	game.player.position = Vector2(1280, 310)
+	await steps(4)
+	check("zone3-spikes-are-live", game.state == Game.State.DYING and game.death_reason == "Watch the spikes", {"state":game.state,"reason":game.death_reason})
+	await fresh()
+	game.player.position = Vector2(1416, 240)
+	for i in range(40):
+		await steps(1)
+		if game.state != Game.State.PLAYING:
+			break
+	check("zone3-pit-is-fatal", game.state == Game.State.DYING and game.death_reason == "Missed the landing", {"state":game.state,"reason":game.death_reason,"position":str(game.player.position)})
 	game.start_session()
 	game.start_session()
 	check("replay-idempotent", game.state == Game.State.PLAYING and game.deaths == 0 and game.player.jumps == 0, {"state":game.state,"deaths":game.deaths,"jumps":game.player.jumps})
