@@ -18,43 +18,50 @@ HANDLE = "@NikBearBrown"
 
 # beat_id -> (clip start, clip end) in the capture. Target durations; the
 # audio pass re-fits these to the measured narration without cutting an action.
+# Sized to the MEASURED Kokoro durations so the action plays at real speed with
+# no freeze padding: gameplay narration was cut to fit the footage, rather than
+# the footage stretched or frozen to fit the narration.
+# Each window is exactly its beat's measured Kokoro duration, anchored so the
+# action it evidences stays inside. Adjacent windows overlap by a second or so;
+# that is continuous real footage, not a repeated take, and no frame is frozen,
+# slowed or retimed to make a sentence fit.
 WINDOWS = {
-    "B02": (0.00, 2.80),
-    "B03": (2.45, 5.70),
-    "B04": (5.20, 11.05),
-    "B05": (10.55, 14.00),
-    "B06": (13.50, 17.05),
-    "B07": (17.00, 30.23),
+    "B02": (0.00, 3.63),
+    "B03": (2.40, 6.24),
+    "B04": (4.90, 11.49),
+    "B05": (10.40, 14.84),
+    "B06": (13.30, 17.50),
+    "B07": (17.28, 30.23),
 }
 
 GAMEPLAY = [
-    ("B02", "OPEN", "Enter starts it. No load screen — the level was already running behind that card.",
+    ("B02", "OPEN", "Enter starts it. The level was already running behind.",
      [("0.0", "title card over the live level"),
       ("0.35", "Enter: card clears, player is at the spawn point"),
       ("0.6", "D then A — the cargo pack and head fin flip across the body")]),
 
-    ("B03", "MECHANISM", "R restarts without counting a death. The spikes do count — and half a second later you are playable again.",
+    ("B03", "MECHANISM", "R is free. The spikes are not — and you are back instantly.",
      [("0.1", "R: player snaps back to spawn, retry counter unchanged"),
       ("0.45", "walks into the spikes, run stops, card reads 'Watch the spikes'"),
       ("0.8", "auto-retry drops the player back at spawn, running")]),
 
-    ("B04", "MECHANISM", "One fixed-height jump. No double jump, six ticks of coyote time, six of buffer. Every landing in this level is authored against that one arc.",
+    ("B04", "MECHANISM", "One jump, fixed height, no double jump. Six ticks of coyote, six of buffer. Every landing is built on it.",
      [("0.05", "Space: a single jump onto the first step"),
       ("0.4", "clears the spike cluster, then the first gap"),
       ("0.75", "second step and second gap; HUD progress bar advances")]),
 
-    ("B05", "MECHANISM", "Escape freezes the body and the clock. Then the new part: one jump across, and the level stops being a corridor.",
+    ("B05", "MECHANISM", "Escape freezes body and clock. Then one jump, and the level forks.",
      [("0.1", "Escape: pause card, timer frozen"),
       ("0.4", "Enter resumes from the same pixel"),
       ("0.75", "jump across the gap onto the fork pad — both routes visible")]),
 
-    ("B06", "MECHANISM", "Low road: fast, flat landings, one spike cluster to clear — and a pit that reads 'Missed the landing', not 'Watch the spikes'.",
+    ("B06", "MECHANISM", "Low road: spikes to clear, then a pit that names a different mistake.",
      [("0.15", "drops right onto the low road"),
       ("0.4", "jumps the second spike cluster at speed"),
       ("0.8", "runs off the end into the pit; the card names the other failure")]),
 
     ("B07", "MECHANISM",
-     "The other line climbs. A step, then two ledges, no hazard on the route. An early draft stacked these ledges straight over the low road — and the jump underneath clipped them. The body is twenty-eight pixels tall and jumps fifty-six, so it needed eighty-four pixels of headroom and had forty-eight. The fix was geometry, not tuning. The ledge overhangs the finish pad, so the high line ends by falling. Flag, results, Enter, and it replays clean.",
+     "The high line climbs instead — a step, two ledges, no hazard on the route. The last ledge overhangs the pad, so it ends by falling, not jumping. Flag, results, Enter, and it replays clean. Then P, M, back to the title card.",
      [("0.08", "step up, then ledge A, then ledge B — spikes visible below"),
       ("0.42", "runs off the last ledge and lands on the finish pad"),
       ("0.62", "reaches the relocated flag; results card shows time and retries"),
@@ -194,6 +201,36 @@ def main():
 
     beats.append({
         "beat_id": "B08",
+        "act": "FALSIFIABILITY",
+        "role_note": ("CAUSE AND EFFECT — the one source change whose consequence is a number. Visual is "
+                      "evidence/screens/10-level-map.png, rendered directly from first_steps.json by "
+                      "godot/tests/map_board.gd, so the diagram cannot drift from the level the game loads. "
+                      "Not gameplay: this beat explains a defect that was fixed BEFORE the capture, so the "
+                      "film does not restage a bug it no longer has."),
+        "narration_text": (
+            "That high line started in the wrong place. The first draft stacked the ledges directly over the "
+            "low road. The body is twenty-eight pixels tall and jumps fifty-six, so a jump underneath needs "
+            "eighty-four pixels of headroom — and it had forty-eight. It clipped the ledge, rose seventeen "
+            "pixels instead of fifty-six, and died on the spikes it was trying to clear. The fix was geometry, "
+            "not jump strength. The ledges moved up, leaving ninety-two pixels. A check now measures the real "
+            "apex on every run and fails if it ever reads seventeen again."),
+        "voice": "am_onyx",
+        "engine": "kokoro",
+        "estimated_duration_s": 27,
+        "shot": {
+            "type": "STILL", "class": "SHOW", "source": "generated", "motion": "pan-right",
+            "label": "LEVEL MAP · rendered from first_steps.json, vertical scale exaggerated",
+            "show": show([
+                ("0.05", "whole-level map: grey starter geometry left, amber additions right"),
+                ("0.3", "the two high ledges, and the low road running beneath them"),
+                ("0.6", "the headroom the jump underneath needs versus what it had"),
+                ("0.85", "the corrected ledge height"),
+            ]),
+        },
+    })
+
+    beats.append({
+        "beat_id": "B09",
         "act": "VERDICT",
         "role_note": ("VERDICT — separates observed working features from what was not shown and what "
                       "is untested. The focus-loss line is the accepted partial-coverage item; the "
@@ -234,7 +271,7 @@ def main():
     })
 
     beats.append({
-        "beat_id": "B09",
+        "beat_id": "B10",
         "act": "HANDOFF",
         "role_note": ("HANDOFF LAW — Your Turn. The prompt extends this episode's idea into the viewer's "
                       "own project and is read aloud verbatim, then discussed, before the invitation."),
@@ -281,7 +318,7 @@ def main():
     })
 
     beats.append({
-        "beat_id": "B10",
+        "beat_id": "B11",
         "act": "OUTRO",
         "role_note": ("OUTRO LOCK (2026-09-18) — ClaudeTitleOutro, exact title restate, @NikBearBrown "
                       "hardcoded, slug-seeded mascot, NO subline. SPOKEN, never scored: Liam re-reads the "

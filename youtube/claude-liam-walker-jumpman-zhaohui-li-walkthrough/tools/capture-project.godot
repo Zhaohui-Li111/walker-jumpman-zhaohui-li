@@ -1,0 +1,38 @@
+; Walker Jumpman: ISOLATED CAPTURE COPY of walker-jumpman-zhaohui-li.
+; Differs from the shipped game only in capture harness, never in gameplay:
+;   - autoloads capture/walkthrough_driver.gd (drives real key events, logs them)
+;   - window override raised to 3840x2160 so Movie Maker records native 4K
+;     (640x360 logical x 6, integer scale, canvas_items stretch, aspect keep)
+; Physics, input map, layers, renderer and clear colour are unchanged.
+config_version=5
+
+[application]
+config/name="walker-jumpman-zhaohui-li (capture)"
+run/main_scene="res://game/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+WalkthroughDriver="*res://capture/walkthrough_driver.gd"
+
+[display]
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=3840
+window/size/window_height_override=2160
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[physics]
+common/physics_ticks_per_second=60
+
+[layer_names]
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_4="Hazard"
+2d_physics/layer_5="Goal"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.965, 0.953, 0.925, 1)

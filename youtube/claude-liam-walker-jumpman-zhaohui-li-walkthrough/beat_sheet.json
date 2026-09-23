@@ -148,11 +148,11 @@
     {
       "beat_id": "B02",
       "act": "OPEN",
-      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 0.00-2.80s at real speed; any tail beyond the action is a labelled held frame.",
-      "narration_text": "Enter starts it. No load screen — the level was already running behind that card.",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 0.00-3.63s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "Enter starts it. The level was already running behind.",
       "voice": "am_onyx",
       "engine": "kokoro",
-      "estimated_duration_s": 2.8,
+      "estimated_duration_s": 3.63,
       "shot": {
         "type": "FOOTAGE",
         "class": "SHOW",
@@ -160,7 +160,7 @@
         "motion": "none",
         "capture": "run-01",
         "capture_start_s": 0.0,
-        "capture_end_s": 2.8,
+        "capture_end_s": 3.63,
         "label": "SCRIPTED INPUT · native 4K engine capture",
         "show": [
           {
@@ -181,19 +181,19 @@
     {
       "beat_id": "B03",
       "act": "MECHANISM",
-      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 2.45-5.70s at real speed; any tail beyond the action is a labelled held frame.",
-      "narration_text": "R restarts without counting a death. The spikes do count — and half a second later you are playable again.",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 2.40-6.24s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "R is free. The spikes are not — and you are back instantly.",
       "voice": "am_onyx",
       "engine": "kokoro",
-      "estimated_duration_s": 3.25,
+      "estimated_duration_s": 3.84,
       "shot": {
         "type": "FOOTAGE",
         "class": "SHOW",
         "source": "capture",
         "motion": "none",
         "capture": "run-01",
-        "capture_start_s": 2.45,
-        "capture_end_s": 5.7,
+        "capture_start_s": 2.4,
+        "capture_end_s": 6.24,
         "label": "SCRIPTED INPUT · native 4K engine capture",
         "show": [
           {
@@ -214,19 +214,19 @@
     {
       "beat_id": "B04",
       "act": "MECHANISM",
-      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 5.20-11.05s at real speed; any tail beyond the action is a labelled held frame.",
-      "narration_text": "One fixed-height jump. No double jump, six ticks of coyote time, six of buffer. Every landing in this level is authored against that one arc.",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 4.90-11.49s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "One jump, fixed height, no double jump. Six ticks of coyote, six of buffer. Every landing is built on it.",
       "voice": "am_onyx",
       "engine": "kokoro",
-      "estimated_duration_s": 5.85,
+      "estimated_duration_s": 6.59,
       "shot": {
         "type": "FOOTAGE",
         "class": "SHOW",
         "source": "capture",
         "motion": "none",
         "capture": "run-01",
-        "capture_start_s": 5.2,
-        "capture_end_s": 11.05,
+        "capture_start_s": 4.9,
+        "capture_end_s": 11.49,
         "label": "SCRIPTED INPUT · native 4K engine capture",
         "show": [
           {
@@ -247,19 +247,19 @@
     {
       "beat_id": "B05",
       "act": "MECHANISM",
-      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 10.55-14.00s at real speed; any tail beyond the action is a labelled held frame.",
-      "narration_text": "Escape freezes the body and the clock. Then the new part: one jump across, and the level stops being a corridor.",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 10.40-14.84s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "Escape freezes body and clock. Then one jump, and the level forks.",
       "voice": "am_onyx",
       "engine": "kokoro",
-      "estimated_duration_s": 3.45,
+      "estimated_duration_s": 4.44,
       "shot": {
         "type": "FOOTAGE",
         "class": "SHOW",
         "source": "capture",
         "motion": "none",
         "capture": "run-01",
-        "capture_start_s": 10.55,
-        "capture_end_s": 14.0,
+        "capture_start_s": 10.4,
+        "capture_end_s": 14.84,
         "label": "SCRIPTED INPUT · native 4K engine capture",
         "show": [
           {
@@ -280,19 +280,19 @@
     {
       "beat_id": "B06",
       "act": "MECHANISM",
-      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 13.50-17.05s at real speed; any tail beyond the action is a labelled held frame.",
-      "narration_text": "Low road: fast, flat landings, one spike cluster to clear — and a pit that reads 'Missed the landing', not 'Watch the spikes'.",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 13.30-17.50s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "Low road: spikes to clear, then a pit that names a different mistake.",
       "voice": "am_onyx",
       "engine": "kokoro",
-      "estimated_duration_s": 3.55,
+      "estimated_duration_s": 4.2,
       "shot": {
         "type": "FOOTAGE",
         "class": "SHOW",
         "source": "capture",
         "motion": "none",
         "capture": "run-01",
-        "capture_start_s": 13.5,
-        "capture_end_s": 17.05,
+        "capture_start_s": 13.3,
+        "capture_end_s": 17.5,
         "label": "SCRIPTED INPUT · native 4K engine capture",
         "show": [
           {
@@ -313,18 +313,18 @@
     {
       "beat_id": "B07",
       "act": "MECHANISM",
-      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 17.00-30.23s at real speed; any tail beyond the action is a labelled held frame.",
-      "narration_text": "The other line climbs. A step, then two ledges, no hazard on the route. An early draft stacked these ledges straight over the low road — and the jump underneath clipped them. The body is twenty-eight pixels tall and jumps fifty-six, so it needed eighty-four pixels of headroom and had forty-eight. The fix was geometry, not tuning. The ledge overhangs the finish pad, so the high line ends by falling. Flag, results, Enter, and it replays clean.",
+      "role_note": "GAMEPLAY EVIDENCE — native 3840x2160 Godot Movie Maker capture, scripted keyboard input, real engine run. Labelled SCRIPTED INPUT on screen. Not a human playtest. Clip is capture/run-01.avi 17.28-30.23s at real speed; any tail beyond the action is a labelled held frame.",
+      "narration_text": "The high line climbs instead — a step, two ledges, no hazard on the route. The last ledge overhangs the pad, so it ends by falling, not jumping. Flag, results, Enter, and it replays clean. Then P, M, back to the title card.",
       "voice": "am_onyx",
       "engine": "kokoro",
-      "estimated_duration_s": 13.23,
+      "estimated_duration_s": 12.95,
       "shot": {
         "type": "FOOTAGE",
         "class": "SHOW",
         "source": "capture",
         "motion": "none",
         "capture": "run-01",
-        "capture_start_s": 17.0,
+        "capture_start_s": 17.28,
         "capture_end_s": 30.23,
         "label": "SCRIPTED INPUT · native 4K engine capture",
         "show": [
@@ -349,6 +349,40 @@
     },
     {
       "beat_id": "B08",
+      "act": "FALSIFIABILITY",
+      "role_note": "CAUSE AND EFFECT — the one source change whose consequence is a number. Visual is evidence/screens/10-level-map.png, rendered directly from first_steps.json by godot/tests/map_board.gd, so the diagram cannot drift from the level the game loads. Not gameplay: this beat explains a defect that was fixed BEFORE the capture, so the film does not restage a bug it no longer has.",
+      "narration_text": "That high line started in the wrong place. The first draft stacked the ledges directly over the low road. The body is twenty-eight pixels tall and jumps fifty-six, so a jump underneath needs eighty-four pixels of headroom — and it had forty-eight. It clipped the ledge, rose seventeen pixels instead of fifty-six, and died on the spikes it was trying to clear. The fix was geometry, not jump strength. The ledges moved up, leaving ninety-two pixels. A check now measures the real apex on every run and fails if it ever reads seventeen again.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 27,
+      "shot": {
+        "type": "STILL",
+        "class": "SHOW",
+        "source": "generated",
+        "motion": "pan-right",
+        "label": "LEVEL MAP · rendered from first_steps.json, vertical scale exaggerated",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "whole-level map: grey starter geometry left, amber additions right"
+          },
+          {
+            "at": "0.3",
+            "event": "the two high ledges, and the low road running beneath them"
+          },
+          {
+            "at": "0.6",
+            "event": "the headroom the jump underneath needs versus what it had"
+          },
+          {
+            "at": "0.85",
+            "event": "the corrected ledge height"
+          }
+        ]
+      }
+    },
+    {
+      "beat_id": "B09",
       "act": "VERDICT",
       "role_note": "VERDICT — separates observed working features from what was not shown and what is untested. The focus-loss line is the accepted partial-coverage item; the playtest line is the honest limit of a scripted route.",
       "narration_text": "Verdict. Sixteen implemented features shown running, two real deaths and two real recoveries, both fork routes finishing. One implemented feature is not on film: pause on focus loss, which an unattended capture cannot trigger — it is covered by a machine check instead. And this was a scripted route, not a person. It proves the geometry is reachable. It cannot tell you the level is fair.",
@@ -399,7 +433,7 @@
       }
     },
     {
-      "beat_id": "B09",
+      "beat_id": "B10",
       "act": "HANDOFF",
       "role_note": "HANDOFF LAW — Your Turn. The prompt extends this episode's idea into the viewer's own project and is read aloud verbatim, then discussed, before the invitation.",
       "narration_text": "Your turn. Paste this: 'In my Godot platformer, measure the take-off window for every jump the level requires — sweep the jump position frame by frame and report the range that still lands.' That is the number I did not have. It turns is this jump fair into a measurement instead of an opinion. Run it on your own level and see which jump has the narrowest window — that one is where your players will quit.",
@@ -451,7 +485,7 @@
       }
     },
     {
-      "beat_id": "B10",
+      "beat_id": "B11",
       "act": "OUTRO",
       "role_note": "OUTRO LOCK (2026-09-18) — ClaudeTitleOutro, exact title restate, @NikBearBrown hardcoded, slug-seeded mascot, NO subline. SPOKEN, never scored: Liam re-reads the exact title then the handle, over a 1.0 s tail hold. No jingle, no music, no game audio. kind: outro_voice.",
       "narration_text": "Walker Jumpman, Extended. At Nik Bear Brown.",
