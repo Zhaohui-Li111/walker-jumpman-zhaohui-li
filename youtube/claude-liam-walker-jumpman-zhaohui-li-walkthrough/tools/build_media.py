@@ -31,9 +31,18 @@ W, H = 3840, 2160
 GAME_W, GAME_H = 3200, 1800
 BAND = (H - GAME_H) // 2
 CREAM = "0xF6F3EC"
+INK = "0x25354A"
 LABEL = "SCRIPTED INPUT · native 4K Godot capture, real engine run · NOT a human playtest"
 FONT = "C\\:/Windows/Fonts/seguisb.ttf"
-LABEL_SIZE = 46
+LABEL_SIZE = 44
+# 5% title-safe inset: y 108..2052, x 192..3648. Gate V fails any content that
+# crosses it, so the label's TOP is placed so its box ends above 2052.
+SAFE_BOTTOM = int(H * 0.95)
+LABEL_Y = SAFE_BOTTOM - LABEL_SIZE - 20          # 1988 -> box ends ~2032
+# The map beat is matted on ink rather than cream: it keeps the diagram inside
+# the title-safe box AND gives the frame the ink/background luminance
+# separation Gate V measures, which a pale map on a pale surround failed.
+MAP_W, MAP_H = 3148, 1771
 
 
 def run(cmd):
@@ -76,7 +85,7 @@ def main():
                 f"scale={GAME_W}:{GAME_H}:flags=neighbor,"
                 f"pad={W}:{H}:{(W-GAME_W)//2}:{BAND}:color={CREAM},"
                 f"drawtext=fontfile='{FONT}':text='{LABEL}':"
-                f"x=(w-text_w)/2:y={H-BAND+56}:fontsize={LABEL_SIZE}:fontcolor=0x5A6472"
+                f"x=(w-text_w)/2:y={LABEL_Y}:fontsize={LABEL_SIZE}:fontcolor=0x5A6472"
             )
             run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
                  "-ss", f"{start:.3f}", "-i", str(CAPTURE), "-t", f"{length:.3f}",
@@ -96,23 +105,25 @@ def main():
             # the problem is stated, in on the stacked ledges and the low road
             # while the numbers land, back out for the fix. Segments are cut, not
             # panned, because a diagram reads better on a cut than on a drift.
-            inset = BAND  # keep the label band clear of the legend
             segs = [
                 ("full", 10.0, None),
                 ("zone", 12.0, (2040, 470, 2100, 1181)),
                 ("full", max(dur - 22.0, 2.0), None),
             ]
             parts = []
+            padx, pady = (W - MAP_W) // 2, (H - MAP_H) // 2
             for i, (kind, seglen, box) in enumerate(segs):
                 part = MEDIA / f"_{bid}_{i}.mp4"
                 if box is None:
-                    chain = f"scale={W}:{H}:flags=lanczos"
+                    chain = f"scale={MAP_W}:{MAP_H}:flags=lanczos"
                 else:
                     x, y, cw, ch = box
                     chain = (f"scale={W}:{H}:flags=lanczos,"
-                             f"crop={cw}:{ch}:{x}:{y},scale={W}:{H}:flags=lanczos")
+                             f"crop={cw}:{ch}:{x}:{y},"
+                             f"scale={MAP_W}:{MAP_H}:flags=lanczos")
+                chain += f",pad={W}:{H}:{padx}:{pady}:color={INK}"
                 chain += (f",drawtext=fontfile='{FONT}':text='{label}':"
-                          f"x=(w-text_w)/2:y={H-inset+56}:fontsize={LABEL_SIZE}:fontcolor=0x5A6472")
+                          f"x=(w-text_w)/2:y={LABEL_Y}:fontsize={LABEL_SIZE}:fontcolor=0xD8DEE6")
                 run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
                      "-loop", "1", "-i", str(src), "-t", f"{seglen:.3f}",
                      "-vf", chain, "-r", str(FPS), "-an",

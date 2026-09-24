@@ -7,6 +7,13 @@ walker mode per skills/make/godot-waikthrough/SKILL.md section 3:
 
 Gameplay windows are capture-relative seconds into capture/run-01.avi and are
 anchored on measured events from the input log, not chosen by eye.
+
+WARNING: this script REWRITES beat_sheet.json from scratch. generate_audio_kokoro.py
+and remotion_scenes.py both stamp provenance into that file (audio_file,
+actual_duration_s, render_duration_s, remotion.rendered). Re-running this after
+them silently drops those stamps and the compiler then refuses with
+"missing required audio". If you must re-run it, re-run the audio generator
+afterwards to restore the stamps.
 """
 import json
 import pathlib
