@@ -59,8 +59,8 @@ godot --headless --path godot --script res://tests/probe_route.gd -- low
 ## Film file identification — RENDERED
 
 - Filename: `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
-- SHA-256: `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25`
-- Spec: 3840 x 2160, 30 fps, h264 + AAC, 135.57 s, 14.4 MB
+- SHA-256: `09bfdfc689362efe6830f05ae8c2abe6c934a8ba5e4720eef55d62cecd7882b3`
+- Spec: 3840 x 2160, 30 fps, h264 + AAC, 145.07 s, 14.7 MB
 - Storage location: course media storage *(upload pending)*
 - Game-source commit demonstrated: `cc8ae01` (`build_id` `0be6756a...3bf9`)
 - Gates: Gate V 0 BLOCKER / 0 MAJOR, GATE T PASS, `.verified.json` receipt SHA matches

@@ -178,14 +178,14 @@ Starter documentation, retained as received: [GAME-BRIEF](GAME-BRIEF.md) · [GDD
 
 ## Final film
 
-**Walker Jumpman, Extended** — 2 min 16 s, landscape, native 4K. Built with the Brutalist
+**Walker Jumpman, Extended** — 2 min 25 s, landscape, native 4K. Built with the Brutalist
 `godot-waikthrough` skill in `walker` mode; Liam narration via local Kokoro `am_onyx`.
 
 | | |
 |---|---|
 | **Filename** | `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4` |
-| **SHA-256** | `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25` |
-| **Spec** | 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 135.57 s, 14.4 MB |
+| **SHA-256** | `09bfdfc689362efe6830f05ae8c2abe6c934a8ba5e4720eef55d62cecd7882b3` |
+| **Spec** | 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 145.07 s, 14.7 MB |
 | **Game source demonstrated** | commit `cc8ae01`, `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` (verified to match `godot/` at submission) |
 | **URL** | *pending upload to course media storage* |
 

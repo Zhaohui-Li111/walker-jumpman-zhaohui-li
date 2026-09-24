@@ -17,12 +17,18 @@ Durations are the **measured** Kokoro narration lengths, which are the clock.
 | B06 | MECHANISM | 13.30–17.50 | Low road: clears the second spike cluster, then falls in the pit — "Missed the landing" | SCRIPTED INPUT | 4.20 s |
 | B07 | MECHANISM | 17.28–30.23 | High line: step, ledge A, ledge B, runs off onto the pad, flag, results, Enter replay, P→M | SCRIPTED INPUT | 12.95 s |
 | B08 | FALSIFIABILITY | `evidence/screens/10-level-map.png` | Whole-level map; cut in on the stacked ledges over the low road as the numbers land; cut back out | LEVEL MAP · rendered from `first_steps.json` | 29.41 s |
-| B09 | VERDICT | Remotion `ClaudeVerdictArtifact` | Four artifact lines: what ran, what is not filmed, what scripted input cannot prove, what is untested | — | 20.25 s |
+| B09 | VERDICT | Remotion `ClaudeVerdictArtifact` | Four artifact lines: what ran, what is not filmed, **who has actually played it**, and the defect the playtest found that the suite could not | — | 29.75 s |
 | B10 | HANDOFF | Remotion `ClaudeComposerAsk` | Greeting "Your turn."; the measurement prompt types in; read aloud then discussed | — | 20.22 s |
 | B11 | OUTRO | Remotion `ClaudeTitleOutro` | "Walker Jumpman, Extended." · @NikBearBrown · slug-seeded mascot · no subline | — | 3.46 s + 1.0 s tail |
 
-**Total narration ≈ 136 s (2 min 16 s).** Duration follows the explanation; no
+**Total narration ≈ 145 s (2 min 25 s).** Duration follows the explanation; no
 runtime target was filled.
+
+> **B09 was re-authored and re-rendered on 2026-09-24**, after the human playtest. The original
+> cut stated "No human playtest yet" — true at render time, false the next morning. Rather than
+> just delete a stale sentence, the beat now names who played it, that no naive player has, and
+> the one defect the playtest found that no machine check could. Narration grew 20.25 s → 29.75 s
+> and the film 135.6 s → 145.1 s.
 
 ## Cut discipline
 

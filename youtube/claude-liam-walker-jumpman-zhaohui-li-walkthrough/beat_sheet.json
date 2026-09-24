@@ -31,7 +31,7 @@
     },
     "note": "Gameplay beats are real engine capture driven by scripted keyboard input and are labelled as such on screen. Coverage contract in coverage.json; capture provenance in CAPTURE.md.",
     "build": {
-      "at": "2026-09-23T21:36:28",
+      "at": "2026-09-24T19:12:44",
       "cut": "master",
       "filled": 12,
       "of": 12,
@@ -105,7 +105,7 @@
         "status": "VIDEO",
         "src": "media\\B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -177,7 +177,7 @@
         "status": "VIDEO",
         "src": "media\\B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -219,7 +219,7 @@
         "status": "VIDEO",
         "src": "media\\B02.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -261,7 +261,7 @@
         "status": "VIDEO",
         "src": "media\\B03.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -303,7 +303,7 @@
         "status": "VIDEO",
         "src": "media\\B04.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -345,7 +345,7 @@
         "status": "VIDEO",
         "src": "media\\B05.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -387,7 +387,7 @@
         "status": "VIDEO",
         "src": "media\\B06.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -433,7 +433,7 @@
         "status": "VIDEO",
         "src": "media\\B07.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -476,14 +476,14 @@
         "status": "VIDEO",
         "src": "media\\B08.mp4",
         "filled_by": "media",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
       "beat_id": "B09",
       "act": "VERDICT",
-      "role_note": "VERDICT — separates observed working features from what was not shown and what is untested. The focus-loss line is the accepted partial-coverage item; the playtest line is the honest limit of a scripted route.",
-      "narration_text": "Verdict. Sixteen implemented features shown running, two real deaths and two real recoveries, both fork routes finishing. One implemented feature is not on film: pause on focus loss, which an unattended capture cannot trigger — it is covered by a machine check instead. And this was a scripted route, not a person. It proves the geometry is reachable. It cannot tell you the level is fair.",
+      "role_note": "VERDICT - separates what was observed running from what is not filmed and what remains untested. Re-authored 2026-09-24 after the human playtest: the original cut said 'No human playtest yet', which was true at render time and stopped being true the next morning. Now states who played it, that no naive player has, and the one defect the playtest found that no machine check could.",
+      "narration_text": "Verdict. Sixteen implemented features shown running, two real deaths, two real recoveries, both fork routes finishing. One is not on film: pause on focus loss, which an unattended capture cannot trigger. What you watched is a scripted route, not a person - it proves the geometry is reachable, not that the level is fair. Its author has since played both lines and cleared the tightest jump first try. That playtest found one thing the tests could not: the retry is fast enough that its own death message flashes past. No stranger has played it.",
       "voice": "am_onyx",
       "engine": "kokoro",
       "estimated_duration_s": 24,
@@ -498,20 +498,20 @@
             "event": "verdict artifact page opens on cream"
           },
           {
-            "at": "0.2",
+            "at": "0.18",
             "event": "line 1 lands: what ran"
           },
           {
-            "at": "0.42",
+            "at": "0.38",
             "event": "line 2 lands: what is not on film"
           },
           {
-            "at": "0.64",
-            "event": "line 3 lands: what a scripted route cannot prove"
+            "at": "0.60",
+            "event": "line 3 lands: who has actually played it"
           },
           {
-            "at": "0.85",
-            "event": "line 4 lands: the one number that would settle it"
+            "at": "0.82",
+            "event": "line 4 lands: what the playtest found that the suite could not"
           }
         ],
         "remotion": {
@@ -522,26 +522,26 @@
             "brandLabel": "@NikBearBrown",
             "artifactLines": [
               "Shown running: 16 features, 2 deaths, 2 recoveries, both fork routes finish.",
-              "Not on film: pause on focus loss — unattended capture cannot lose focus.",
-              "Scripted input proves reachability, not fairness. No human playtest yet.",
-              "Untested: the fork-pad take-off window is calculated at ~46 px, never measured."
+              "Not on film: pause on focus loss - unattended capture cannot lose focus.",
+              "Playtested by its author, both routes. No naive player has seen it.",
+              "It found what tests could not: the retry outruns its own death message."
             ]
           },
           "rendered": {
             "out": "media/B09.mp4",
-            "at": "2026-09-24T01:04:10.605822+00:00"
+            "at": "2026-09-24T23:05:49.811312+00:00"
           }
         }
       },
-      "actual_duration_s": 20.25,
       "audio_file": "mp3/beat-B09.mp3",
-      "render_duration_s": 20.266666666666666,
       "build": {
         "status": "VIDEO",
         "src": "media\\B09.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-09-23T21:36:28"
-      }
+        "at": "2026-09-24T19:12:44"
+      },
+      "actual_duration_s": 29.75,
+      "render_duration_s": 29.766666666666666
     },
     {
       "beat_id": "B10",
@@ -605,7 +605,7 @@
         "status": "VIDEO",
         "src": "media\\B10.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     },
     {
@@ -660,7 +660,7 @@
         "status": "VIDEO",
         "src": "media\\B11.mp4",
         "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-09-23T21:36:28"
+        "at": "2026-09-24T19:12:44"
       }
     }
   ]

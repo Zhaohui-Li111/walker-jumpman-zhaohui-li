@@ -9,8 +9,8 @@
 **Game source as submitted:** `build_id` `a16c4f8d6d00bb1ef886e1506c1bf434c95b42f325c11dfb33fc2e2758835247` — **6 of 30 files differ from the filmed snapshot**, and none of them are gameplay: the Godot editor re-normalised `project.godot` (dropping two lines that equal engine defaults) when the project was reopened for the playtest, and generated five `.uid` files for test scripts. Every gameplay file is byte-identical, `aspect=keep` and 60 Hz physics are unchanged when measured, and the suite still passes 31/31 + 9/9. Enumerated in the reel's `CAPTURE.md` under "Drift after the capture".
 **Godot version and operating system:** Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/OpenGL · Windows 11 Home China (10.0.26200)
 **Final film URL and filename:** *URL pending upload to course media storage* · `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
-**Final film SHA-256:** `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25`
-**Final film spec:** 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 135.57 s (2:16), 14.4 MB
+**Final film SHA-256:** `09bfdfc689362efe6830f05ae8c2abe6c934a8ba5e4720eef55d62cecd7882b3`
+**Final film spec:** 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 145.07 s (2:25), 14.7 MB
 
 ---
 
@@ -72,10 +72,11 @@ pinned by a regression check.
    the level, so whether the fork reads as a choice to a stranger is unknown, and the fork-pad
    take-off window remains *calculated* at ~46 px rather than measured. No naive playtester
    recruited.
-2. **The film carries one stale sentence.** Its Verdict beat says *"No human playtest yet"* —
-   true when it rendered on 2026-09-23 21:41, false the next morning. The film was not
-   re-rendered for it. The surrounding claim (scripted input proves reachability, not fairness)
-   is unaffected. Flagged here, in README and in SOURCES §5 rather than left to be discovered.
+2. **The film's gameplay predates the playtest, and says so.** The capture is a scripted route
+   recorded 2026-09-23; the human playtest happened the next day. The Verdict beat was
+   re-authored and re-rendered on 2026-09-24 so the film states this itself rather than
+   carrying a sentence that had stopped being true. No gameplay was re-captured — the footage
+   is the original run, and the game source it shows is unchanged.
 3. The fork-pad entry jump is the tightest input in the level (≈46 px run-up window);
    that figure is calculated, not measured.
 4. Nothing checks label placement; one overlap was caught only by looking at a screenshot.

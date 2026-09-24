@@ -66,6 +66,42 @@ read against the cream `#f6f3ec` background.
 
 ---
 
+## 2a. Licenses
+
+| Work | Licence | Notes |
+|---|---|---|
+| **walker-jumpman starter** (Nik Bear Brown) | **No licence file shipped** — see below | The distributed `walker-jumpman-main.zip` contains no `LICENSE`/`COPYING`, and the upstream repo states none. Used here under the course's explicit instruction to extend it in a student copy. **This is not a grant of redistribution rights**, and no claim of one is made. |
+| **This extension** (Zhaohui Li) | MIT — see [LICENSE](LICENSE) | Covers only my own additions. It cannot and does not relicense the starter. |
+| **Godot Engine 4.7.2** | MIT | Engine only; not redistributed here (source-only release, no export templates). |
+| **EB Garamond** (film typography) | SIL Open Font License 1.1 | Bundled with the Brutalist toolkit, not with this repository. |
+| **Kokoro-82M / `kokoro-onnx`** (narration voice) | Apache 2.0 (model weights: Apache 2.0) | Model files downloaded at build time, not committed. |
+| **Remotion** (bookend scenes) | Remotion Licence — free for individuals and small teams; a company licence is required above that threshold | Used locally for an academic render; nothing published. |
+| **Brutalist toolkit** (`brutalist.art`) | Course-provided; no licence file in the distributed checkout | Not vendored into this repository. One line was patched locally (SOURCES §6). |
+| **ffmpeg** 9.0.2 (Gyan build) | GPL build | Used as an external tool only; not redistributed. |
+| **All art and audio in the game** | Mine, MIT with the rest of my additions | Original vector drawing in code. No imported sprites, textures, fonts or sound. |
+
+**Honest note on the starter's licence.** Extending unlicensed code is legally ambiguous in
+general. It is done here because the assignment directs students to extend this specific
+starter in their own copy, the original author is the course instructor, and the repository
+credits him and preserves his work unmodified in its first commit. If the starter is later
+given a licence, this file should be updated to name it.
+
+## 2b. Code style
+
+**GDScript follows the [official Godot GDScript style guide](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html)**
+— tabs for indentation, `snake_case` for functions and variables, `PascalCase` for classes,
+`CONSTANT_CASE` for constants, static typing where the type is not obvious from assignment,
+and two blank lines between top-level definitions where the starter uses them.
+
+This is the guide the starter already followed, and matching it was deliberate: a reviewer
+diffing my additions against `7f412c8` should see new logic, not a reformatting.
+
+**Python** (the four `tools/*.py` reel scripts) follows **PEP 8** — 4-space indentation,
+`snake_case`, 100-column soft limit, module docstrings stating what each script guarantees.
+
+Neither language is linted automatically in this project. No formatter was run, so any
+deviation is mine rather than a tool's.
+
 ## 3. Tools
 
 | Tool | Version | Use |
@@ -91,6 +127,51 @@ this repository. If one is recruited before submission, their actual words go in
 and they are credited here.
 
 ---
+
+## 4a. Share of code: student vs AI — the blunt number
+
+The course asks for an estimate. Here it is, measured rather than guessed, and it is not
+flattering, so it is stated plainly rather than softened.
+
+**Of the code text in this repository, I typed approximately 0%. Claude Code wrote
+approximately 100% of it.**
+
+Measured with `git diff --shortstat 7f412c8..HEAD -- godot` and `wc -l`:
+
+| Body of code | Lines | Typed by me | Typed by AI |
+|---|---|---|---|
+| Starter retained (`godot/` at `7f412c8`) | 680 | — | — (Nik Bear Brown's) |
+| Changes to starter files (`godot/`) | +556 / −52 across 22 files | 0 | all |
+| New game-side scripts (5 test/capture/diagnostic `.gd`) | 265 | 0 | all |
+| Film reel tooling (4 Python + 1 GDScript) | 1,139 | 0 | all |
+| **Total new code** | **~1,700 lines** | **0** | **~1,700** |
+
+Documentation (~14,000 words across CHANGE-BRIEF, TEST-REPORT, FRICTIONAL, SOURCES, README,
+SUBMISSION and the reel) was likewise **AI-drafted from the session record and reviewed by me**,
+except FRICTIONAL §9 and TEST-REPORT §5, which quote my own playtest reports.
+
+**What that number does not say.** "Who typed it" and "whose work it is" are different
+questions, and only the first one has a clean number. Mine, and checkable against the commit
+history:
+
+- **Every design decision.** The character concept and its pack-and-fin silhouette; the rule
+  that no drawn pixel may leave the collider, which drove the entire verification method; that
+  Zone 03 should fork on a trade-off rather than a longer floor; that the fork must be
+  reversible.
+- **Every constraint.** Tuning, collider and controls declared off-limits in CHANGE-BRIEF §3
+  before implementation — and held: `tuning.gd` diff is empty.
+- **Every refusal.** I rejected widening the route fixture's tick budget to get a green report
+  (FRICTIONAL §5); I required the geometry be redesigned rather than the jump strength raised
+  when the headroom bug appeared (§6); I chose to record the death-card legibility finding
+  rather than rush a fix hours before submission (§9).
+- **The playtest.** Three sessions. Not delegable, and the only part of this project that found
+  a defect no assertion could.
+- **Acceptance.** Nothing here shipped that I did not look at. The five visual defects were
+  found by AI inspecting frames; I approved each fix.
+
+**Honest characterisation:** I directed, constrained, judged and tested. I did not type the
+code. A reader should weigh this section knowing that, and FRICTIONAL.md is written so the
+decisions are traceable to the commits that implement them.
 
 ## 5. Human and AI contribution
 
@@ -127,11 +208,13 @@ words — quoted verbatim, including the one finding that went against the desig
 | What the film claims, and its limits | **Mine.** The Verdict's four lines — including "no human playtest yet", true at render time — are the judgements I stand behind |
 | Every QC fix (5 defects) | AI found them by inspecting frames; I approved each fix |
 
-**Known staleness in the rendered film:** the Verdict beat says *"No human playtest yet."* That
-was true when it rendered (2026-09-23 21:41 UTC+8). The playtest happened the next day. The film
-was not re-rendered; the discrepancy is stated here, in README and in SUBMISSION rather than
-quietly left for a reviewer to find. The substantive claim around it — that scripted input proves
-reachability rather than fairness — is unaffected and still true.
+**A stale claim, found and re-rendered.** The first cut (2026-09-23 21:41) ended its Verdict with
+*"No human playtest yet."* True at render time; false the next morning, once the playtest
+happened. Rather than ship a film containing a sentence that was no longer accurate, B09 was
+re-authored and re-rendered on 2026-09-24. The card now states who played it, that **no naive
+player has**, and the one defect the playtest found that no machine check could — the retry
+outrunning its own death message. Narration 20.25 s → 29.75 s; film 135.6 s → 145.1 s; the
+checksum changed accordingly, and every document recording it was updated in the same commit.
 
 ---
 
