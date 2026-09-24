@@ -244,8 +244,8 @@ than a rendering defect.**
 
 **Observation.** Asked to die deliberately on each hazard, the player reported the
 retry felt fast, the pit correctly showed "Missed the landing", and the card
-*"just flashes past"* — you can make out roughly what it says, but **there is no
-time to read it properly**.
+*"just flashes past"* — you can basically make out what it says, but **there is
+no time to read it properly**.
 
 **What that does and does not mean.** Both things are true at once, and the
 second does not cancel the first:
@@ -297,28 +297,28 @@ run from `godot --path godot` in a normal game window with a keyboard.**
 
 ### What the player actually reported
 
-Verbatim, in full, across two exchanges:
+In full, across three sessions. Reported by the player in Chinese and recorded
+here in English at their request; the wording is theirs, not softened.
 
-> 我试玩了，没有问题，可以通关
-> *("I playtested it, no problems, can complete it.")*
+> I playtested it, no problems, can complete it.
 
-> 我一次就过，走的上面的路
-> *("I cleared it on the first try, took the high line.")*
+Asked which route was taken and whether the fork-pad jump gave any trouble:
 
-> 低路我也玩了，没啥问题
-> *("I played the low road too, no real problems.")*
+> I cleared it on the first try, took the high line.
+
+Asked afterwards about the other half of the fork:
+
+> I played the low road too, no real problems.
 
 Third session, deliberately dying on each hazard:
 
-> 感觉挺快的，字幕一闪就过去了，掉进坑里确实显示 missed the landing
-> *("It felt quite fast — the caption just flashes past. Falling in the pit does
-> show 'Missed the landing'.")*
+> It felt quite fast — the caption just flashes past. Falling in the pit does
+> show "Missed the landing".
 
 Asked whether the card should be made more legible, the player's judgement:
 
-> 可以记下来，但没必要改了，我觉得基本能知道说的什么 … 就是没时间仔细读
-> *("Worth recording, but no need to change it — you can basically make out what
-> it says … there just isn't time to read it properly.")*
+> Worth recording, but no need to change it — you can basically make out what
+> it says. There just isn't time to read it properly.
 
 ### What that establishes
 
