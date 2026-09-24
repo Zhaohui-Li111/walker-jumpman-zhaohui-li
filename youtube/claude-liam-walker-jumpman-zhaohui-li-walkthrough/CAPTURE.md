@@ -10,7 +10,8 @@ Game: **walker-jumpman-zhaohui-li**, an extension of walker-jumpman by Nik Bear 
 | | |
 |---|---|
 | Source root hashed | `godot/` (the shipped game), excluding the `.godot` engine cache |
-| `build_id` | `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` |
+| `build_id` **as filmed** | `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` |
+| `build_id` **as submitted** | `a16c4f8d6d00bb1ef886e1506c1bf434c95b42f325c11dfb33fc2e2758835247` — see "Drift after the capture" below |
 | Hash method | SHA-256 over `"<relpath>\0<sha256(file)>\n"` for all 25 files, paths sorted |
 | Per-file manifest | [SOURCE-SNAPSHOT.json](SOURCE-SNAPSHOT.json) |
 | Git revision | `cc8ae01` (working tree clean at capture time) |
@@ -123,6 +124,40 @@ character stuck against a step.
 
 Exact timings for the submitted capture are re-read from `run-01-inputs.jsonl`;
 the table above is from the matching validation run and is indicative.
+
+## Drift after the capture — the submitted source is not byte-identical to the filmed source
+
+Recorded because "the film shows the submitted game" is a claim a reviewer should be able to
+check, and a bare mismatch of hashes would look worse than the truth.
+
+After the film was rendered, the project was opened in the Godot editor again (to play it for
+the human playtest). The editor **rewrote `project.godot`** — dropping `window/stretch/aspect`
+and `physics/common/physics_ticks_per_second`, both of which equal engine defaults — and
+**generated five `.uid` files** for test scripts added during this project. `.uid` files belong
+in version control in Godot 4.4+, so they are committed rather than ignored.
+
+Exactly **6 of 30 files** differ between the filmed snapshot and the submitted source:
+
+```
+MODIFIED  project.godot
+ADDED     tests/capture_character.gd.uid
+ADDED     tests/capture_map.gd.uid
+ADDED     tests/character_board.gd.uid
+ADDED     tests/map_board.gd.uid
+ADDED     tests/probe_route.gd.uid
+```
+
+**Every gameplay file is byte-identical** — `features/player/player.gd`, `features/player/tuning.gd`,
+`game/session.gd`, `game/main.tscn`, `ui/hud.gd`, `levels/first_steps.json`. Verified by
+comparing per-file hashes against [SOURCE-SNAPSHOT.json](SOURCE-SNAPSHOT.json), which still
+records the filmed state and is deliberately **not** updated.
+
+Behaviour is unchanged, measured rather than assumed: a `ProjectSettings` probe on the submitted
+source reports `aspect=keep` and 60 Hz physics — the same values the two removed lines declared.
+The full suite still reports **31/31 and 9/9** on the submitted source.
+
+`SOURCE-SNAPSHOT.json` is left at the filmed state on purpose. It is the film's evidence; it
+should describe what was filmed, not be quietly refreshed so the hashes line up.
 
 ## Audio
 

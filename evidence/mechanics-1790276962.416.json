@@ -1,0 +1,254 @@
+{
+  "created_at": "2026-09-24T19:09:22",
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "launch-grounded",
+      "observed": {
+        "engine": "4.7.2-stable (official)",
+        "position": "(64.0, 320.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "speed-cap",
+      "observed": {
+        "velocity_x": 160.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "neutral-stop",
+      "observed": {
+        "velocity_x": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "simultaneous-directions",
+      "observed": {
+        "velocity_x": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "left-wall",
+      "observed": {
+        "x": 10.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "fixed-jump-and-no-double",
+      "observed": {
+        "jumps": 1,
+        "rise_px": 56.07470703125
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "held-jump-no-bounce",
+      "observed": {
+        "jumps": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "coyote-5",
+      "observed": {
+        "age": 5,
+        "jumps": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "coyote-6",
+      "observed": {
+        "age": 6,
+        "jumps": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "coyote-7",
+      "observed": {
+        "age": 7,
+        "jumps": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "buffer-5",
+      "observed": {
+        "age": 5,
+        "jumps": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "buffer-6",
+      "observed": {
+        "age": 6,
+        "jumps": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "buffer-7",
+      "observed": {
+        "age": 7,
+        "jumps": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "low-ceiling",
+      "observed": {
+        "jumps": 1,
+        "minimum_feet_y": 300.000274658203
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "pause-freezes",
+      "observed": {
+        "elapsed": 0.133333333333333,
+        "position": "(64.0, 295.9253)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "focus-loss-pauses",
+      "observed": {
+        "state": 2
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "actual-spike-collision",
+      "observed": {
+        "deaths": 1,
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "duplicate-death-ignored",
+      "observed": {
+        "deaths": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "respawn",
+      "observed": {
+        "position": "(64.0, 320.0)",
+        "state": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "manual-restart-not-death",
+      "observed": {
+        "deaths": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "twenty-retries",
+      "observed": {
+        "deaths": 21,
+        "max_retry_ticks": 34
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "death-before-finish",
+      "observed": {
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "fall-boundary",
+      "observed": {
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "complete-real-route-low",
+      "observed": {
+        "deaths": 0,
+        "jump_marks_used": 8,
+        "position": "(1544.878, 319.9253)",
+        "state": 4,
+        "ticks": 562
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "complete-real-route-high",
+      "observed": {
+        "deaths": 0,
+        "jump_marks_used": 9,
+        "position": "(1552.878, 277.5253)",
+        "state": 4,
+        "ticks": 565
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "low-road-jump-not-clipped-by-high-line",
+      "observed": {
+        "apex_feet_y": 263.924285888672,
+        "rise_px": 56.0757141113281
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "starter-section-still-walkable",
+      "observed": {
+        "deaths": 0,
+        "position": "(918.2171, 319.9253)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "old-finish-no-longer-wins",
+      "observed": {
+        "finish_x": 1548.0,
+        "state": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "zone3-spikes-are-live",
+      "observed": {
+        "reason": "Watch the spikes",
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "zone3-pit-is-fatal",
+      "observed": {
+        "position": "(1416.0, 435.8048)",
+        "reason": "Missed the landing",
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "replay-idempotent",
+      "observed": {
+        "deaths": 0,
+        "jumps": 0,
+        "state": 1
+      },
+      "status": "PASS"
+    }
+  ],
+  "scope": "First Steps slice; not full GDD acceptance or human playtesting"
+}

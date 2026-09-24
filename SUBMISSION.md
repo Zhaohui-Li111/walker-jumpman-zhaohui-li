@@ -5,7 +5,8 @@
 **Project name:** walker-jumpman-zhaohui-li
 **GitHub repository/folder URL:** *(pending — repository not yet pushed; see "Still outstanding")*
 **Submitted commit SHA:** *(read from `git rev-parse HEAD` after the final commit and paste here and into Canvas — a commit cannot contain its own SHA)*
-**Game-source revision shown in the film:** `cc8ae01` — verified: the `godot/` tree hashes to `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9`, which is the id recorded in the film's `coverage.json`, and `godot/` is unchanged in every commit after it
+**Game-source revision shown in the film:** `cc8ae01`, `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` (the id recorded in the film's `coverage.json`)
+**Game source as submitted:** `build_id` `a16c4f8d6d00bb1ef886e1506c1bf434c95b42f325c11dfb33fc2e2758835247` — **6 of 30 files differ from the filmed snapshot**, and none of them are gameplay: the Godot editor re-normalised `project.godot` (dropping two lines that equal engine defaults) when the project was reopened for the playtest, and generated five `.uid` files for test scripts. Every gameplay file is byte-identical, `aspect=keep` and 60 Hz physics are unchanged when measured, and the suite still passes 31/31 + 9/9. Enumerated in the reel's `CAPTURE.md` under "Drift after the capture".
 **Godot version and operating system:** Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/OpenGL · Windows 11 Home China (10.0.26200)
 **Final film URL and filename:** *URL pending upload to course media storage* · `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
 **Final film SHA-256:** `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25`
