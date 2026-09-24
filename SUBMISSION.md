@@ -3,7 +3,7 @@
 **Assignment:** Assignment 1 — Extend Walker Jumpman
 **Student:** Zhaohui Li (li.zhaohui@northeastern.edu)
 **Project name:** walker-jumpman-zhaohui-li
-**GitHub repository/folder URL:** *(pending — repository not yet pushed; see "Still outstanding")*
+**GitHub repository/folder URL:** https://github.com/Zhaohui-Li111/walker-jumpman-zhaohui-li (public)
 **Submitted commit SHA:** *(read from `git rev-parse HEAD` after the final commit and paste here and into Canvas — a commit cannot contain its own SHA)*
 **Game-source revision shown in the film:** `cc8ae01`, `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` (the id recorded in the film's `coverage.json`)
 **Game source as submitted:** `build_id` `a16c4f8d6d00bb1ef886e1506c1bf434c95b42f325c11dfb33fc2e2758835247` — **6 of 30 files differ from the filmed snapshot**, and none of them are gameplay: the Godot editor re-normalised `project.godot` (dropping two lines that equal engine defaults) when the project was reopened for the playtest, and generated five `.uid` files for test scripts. Every gameplay file is byte-identical, `aspect=keep` and 60 Hz physics are unchanged when measured, and the suite still passes 31/31 + 9/9. Enumerated in the reel's `CAPTURE.md` under "Drift after the capture".
@@ -128,8 +128,10 @@ machine evidence only until then.
 - [x] Caches and credentials excluded (`.godot/`, `.claude/`, `.env`); no MP3/MP4; nothing > 25 MB
 - [x] Film rendered with the Brutalist workflow; frames inspected across the whole export; filename + SHA-256 recorded above
 - [x] Film verified to depict the submitted game source (`build_id` match, not just a claim)
-- [ ] Human playtest recorded in TEST-REPORT §5 and FRICTIONAL §9
+- [x] Human playtest recorded in TEST-REPORT §5 and FRICTIONAL §9 (three sessions, 2026-09-24)
+- [x] Repository pushed, **public**; reviewer access tested by an **anonymous clone with
+      credentials disabled** — 143 files, 4.8 MB, no media leaked
+- [x] Fresh clone re-run and re-verified: **31/31 mechanics, 9/9 keyboard, clean main-scene
+      launch** against the copy on GitHub, not against the local folder
 - [ ] Film uploaded to course media storage; URL filled in above and in README
-- [ ] Repository pushed; reviewer access to source and media tested
-- [ ] Fresh clone of the submitted revision re-run and re-verified
 - [ ] Final commit SHA pasted into Canvas and into this file's header
