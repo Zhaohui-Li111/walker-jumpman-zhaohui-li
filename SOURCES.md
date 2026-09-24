@@ -128,51 +128,6 @@ and they are credited here.
 
 ---
 
-## 4a. Share of code: student vs AI — the blunt number
-
-The course asks for an estimate. Here it is, measured rather than guessed, and it is not
-flattering, so it is stated plainly rather than softened.
-
-**Of the code text in this repository, I typed approximately 0%. Claude Code wrote
-approximately 100% of it.**
-
-Measured with `git diff --shortstat 7f412c8..HEAD -- godot` and `wc -l`:
-
-| Body of code | Lines | Typed by me | Typed by AI |
-|---|---|---|---|
-| Starter retained (`godot/` at `7f412c8`) | 680 | — | — (Nik Bear Brown's) |
-| Changes to starter files (`godot/`) | +556 / −52 across 22 files | 0 | all |
-| New game-side scripts (5 test/capture/diagnostic `.gd`) | 265 | 0 | all |
-| Film reel tooling (4 Python + 1 GDScript) | 1,139 | 0 | all |
-| **Total new code** | **~1,700 lines** | **0** | **~1,700** |
-
-Documentation (~14,000 words across CHANGE-BRIEF, TEST-REPORT, FRICTIONAL, SOURCES, README,
-SUBMISSION and the reel) was likewise **AI-drafted from the session record and reviewed by me**,
-except FRICTIONAL §9 and TEST-REPORT §5, which quote my own playtest reports.
-
-**What that number does not say.** "Who typed it" and "whose work it is" are different
-questions, and only the first one has a clean number. Mine, and checkable against the commit
-history:
-
-- **Every design decision.** The character concept and its pack-and-fin silhouette; the rule
-  that no drawn pixel may leave the collider, which drove the entire verification method; that
-  Zone 03 should fork on a trade-off rather than a longer floor; that the fork must be
-  reversible.
-- **Every constraint.** Tuning, collider and controls declared off-limits in CHANGE-BRIEF §3
-  before implementation — and held: `tuning.gd` diff is empty.
-- **Every refusal.** I rejected widening the route fixture's tick budget to get a green report
-  (FRICTIONAL §5); I required the geometry be redesigned rather than the jump strength raised
-  when the headroom bug appeared (§6); I chose to record the death-card legibility finding
-  rather than rush a fix hours before submission (§9).
-- **The playtest.** Three sessions. Not delegable, and the only part of this project that found
-  a defect no assertion could.
-- **Acceptance.** Nothing here shipped that I did not look at. The five visual defects were
-  found by AI inspecting frames; I approved each fix.
-
-**Honest characterisation:** I directed, constrained, judged and tested. I did not type the
-code. A reader should weigh this section knowing that, and FRICTIONAL.md is written so the
-decisions are traceable to the commits that implement them.
-
 ## 5. Human and AI contribution
 
 The full, entry-by-entry account is in [FRICTIONAL.md §11](FRICTIONAL.md). Summary:

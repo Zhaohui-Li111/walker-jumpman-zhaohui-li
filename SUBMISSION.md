@@ -79,5 +79,4 @@ Known limitations:
 Supporting documents in the repository: `README.md` (run instructions, controls, changes),
 `CHANGE-BRIEF.md` (predictions, written before implementation, revisions appended in §6),
 `TEST-REPORT.md` (baseline, every run including failures, revision cycles), `FRICTIONAL.md`
-(honest log), `SOURCES.md` (credits, licences §2a, style guides §2b, student-vs-AI code share
-§4a), `LICENSE`, and the film reel under `youtube/`.
+(honest log), `SOURCES.md` (credits, licences §2a, style guides §2b, human/AI contribution §5), `LICENSE`, and the film reel under `youtube/`.
