@@ -232,6 +232,54 @@ Response: moved both Zone 03 labels from y=150/170 to **y=118/138**, above the h
 
 Kept as a limitation rather than "fixed": the labels are still static world text with hand-placed coordinates. They are in the level JSON now, so they move with the data, but nothing *checks* that a label does not overlap geometry. A future version should measure the string and assert clearance.
 
+### Cycle 4 — the retry is fast, and that is why its message fails (human observation)
+
+**This is the only cycle in this report that came from a person rather than from a
+machine check or a screenshot, and it is the one that found a design flaw rather
+than a rendering defect.**
+
+**Observation.** Asked to die deliberately on each hazard, the player reported the
+retry felt fast, the pit correctly showed "Missed the landing", and the card
+*"just flashes past"* — you can make out roughly what it says, but **there is no
+time to read it properly**.
+
+**What that does and does not mean.** Both things are true at once, and the
+second does not cancel the first:
+
+- The 0.55 s retry is doing its job. "Cheap retry" was a tick count in this
+  report until now; a person has confirmed it feels fast. That is a win.
+- The card is the only place the game says **which** mistake you made, and this
+  project extended that deliberately — Zone 03 added a second failure mode with
+  its own message. Machine checks confirm both strings (`zone3-pit-is-fatal`,
+  `zone3-spikes-are-live`). But the gist arriving is not the same as the message
+  landing, and the player who *wrote* the messages still could not read one
+  comfortably.
+
+The honest size of this finding: **a mild legibility cost that the retry speed
+buys, not a broken feature.** The explainer states the two-message design as a
+feature, and it is one — the player did register which failure they had hit.
+
+**No revision, and it was the player's call.** Asked whether to make the card
+more legible, the judgement was *"worth recording, but no need to change it."*
+That is recorded as their decision, not smoothed into a claim that nothing is
+wrong. Supporting reasoning: `retry_remaining` is the starter's value, listed in
+CHANGE-BRIEF §3 under "explicitly unchanged", and lengthening the hold would
+trade a confirmed strength (the retry feels fast) for an unconfirmed one, on a
+single report, hours before submission.
+
+**Left as a named design tension**, with two candidate fixes that do not touch
+the timing, for whoever picks this up:
+
+1. Cut the card to the reason alone, drop the secondary line, set it large — a
+   three-word card is readable in 0.55 s where two lines of prose is not.
+2. Carry the reason into the respawned run, so the information outlives the card.
+
+Either changes the retry presentation and would want its own playtest.
+
+**The point worth keeping:** no automated check in this project could have
+surfaced this. The strings are right, the timing is right, the assertions pass.
+It took someone dying on purpose and reporting how it felt.
+
 ### Cycle 3 — boots read as one slab (cosmetic)
 
 Observation: in the first character contact sheet, the two 6 px boots met at x=0 and read as a single wide bar when standing, flattening the silhouette. Response: narrowed each boot to 5 px so a 2 px gap shows. Visible in the current `05-character-states.png`.
@@ -255,6 +303,18 @@ Verbatim, in full, across two exchanges:
 
 > 低路我也玩了，没啥问题
 > *("I played the low road too, no real problems.")*
+
+Third session, deliberately dying on each hazard:
+
+> 感觉挺快的，字幕一闪就过去了，掉进坑里确实显示 missed the landing
+> *("It felt quite fast — the caption just flashes past. Falling in the pit does
+> show 'Missed the landing'.")*
+
+Asked whether the card should be made more legible, the player's judgement:
+
+> 可以记下来，但没必要改了，我觉得基本能知道说的什么 … 就是没时间仔细读
+> *("Worth recording, but no need to change it — you can basically make out what
+> it says … there just isn't time to read it properly.")*
 
 ### What that establishes
 
@@ -287,7 +347,8 @@ flagging as open since §6:
 | Which route was taken? | **Answered: the high line.** |
 | Has the low road ever been played by a human? | **Answered: yes**, in a later session, with no trouble reported. Both halves of the fork have now been played. |
 | Did the fork read as a *choice*, or did momentum pick the line? | **Still open** — the player already knew both routes existed, and played them deliberately one after the other rather than choosing between them in the moment. |
-| Did the ~0.55 s retry feel fast enough? | **Still open.** No deaths were reported in either session, so the retry loop has still never been exercised by a person. The 0.55 s figure and the two distinct death messages remain machine evidence only. |
+| Did the ~0.55 s retry feel fast enough? | **Answered: yes for the retry, no for the message.** The recovery itself felt fast. But the death card *"just flashes past"* — the player could not read it. See §4 cycle 4: the retry loop is good and the thing it is supposed to communicate does not land. |
+| Do the two death messages distinguish the failures? | **Answered in the code, not in play.** The pit was confirmed to show "Missed the landing" — but only because the player was looking for it, having designed it. In ordinary play the card is unreadable at 0.55 s. |
 | Was the relocated finish findable without prior knowledge? | **Still open, and untestable by this player** — they authored the level. |
 
 **The author is not a naive player.** They knew where every landing and hazard

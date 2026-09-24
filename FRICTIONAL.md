@@ -247,15 +247,40 @@ played it too, no real problems. Both halves of the fork have now been played by
 second spike cluster is jumpable at speed and the 64 px pit is crossable by hand, not just by
 the driver.
 
-**Still untested, and I want it on the record rather than buried:** across both sessions I
-**died zero times**. So no human has ever seen the retry loop. The ~0.55 s recovery I keep
-describing as "cheap", and the two distinct death messages I make a design point of in the film
-("Watch the spikes" vs "Missed the landing"), are still entirely machine evidence. I have
-verified they are *correct*; I have never verified they *feel* right, which is the only thing a
-playtest was supposed to add.
+**The irony I then had to fix:** I designed a level around failure and retry, and playtested it
+twice without failing once. So I went back a third time and died on purpose on each hazard.
 
-There is a mild irony here worth naming: I designed a level around failure and retry, then
-tested it twice without failing once.
+**Third session, and the most useful thing any of this produced:**
+*"感觉挺快的，字幕一闪就过去了，掉进坑里确实显示 missed the landing"* — it feels fast, the
+caption just flashes past, and the pit does show "Missed the landing".
+
+Two confirmations and one small cost:
+
+- The retry genuinely feels fast. "Cheap retry" had been a tick count in my documentation; now
+  it is a thing a person has felt.
+- The pit message is correct in play, not only in the test.
+- **The card flashes past.** I can tell roughly what it says, but there is no time to read it
+  properly — and I wrote the text.
+
+**Why I bothered writing this down.** The two distinct death messages are something I chose to
+build: the starter had one hazard, I added a second failure mode and gave it its own sentence,
+and I state that on screen in the explainer as a feature. There is a passing machine check for
+each string. Both are correct. But *correct* and *read* are different things, and the gap
+between them is invisible to every test I wrote — the assertions check that `death_reason`
+equals the right string; they cannot check whether a human has time to read it.
+
+I only found out because I was asked to go and die on purpose. Two playtests where I did not
+fail told me nothing about the failure design at all.
+
+**What I decided: record it, do not change it.** My judgement was that the message basically
+gets through, and that lengthening the hold would trade a strength I had just confirmed (the
+retry feels fast) for a fix to something I had just described as minor — on one session, hours
+before submitting. It is in TEST-REPORT §4 cycle 4 as a named design tension with two candidate
+fixes that do not touch the timing.
+
+I am recording that as *my* call rather than as "nothing is wrong", because a reviewer should be
+able to disagree with it. The honest summary is: the retry speed buys a small legibility cost,
+I noticed, I decided the trade was worth keeping, and I wrote down what I gave up.
 
 **The deeper problem with this playtest:** I built the level. I knew where every landing, hazard
 and pit was before I pressed Enter. I cannot test whether the fork reads as a choice, because I

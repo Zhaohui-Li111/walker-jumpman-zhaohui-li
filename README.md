@@ -135,13 +135,13 @@ cycles: **[TEST-REPORT.md](TEST-REPORT.md)**.
 
 ## Known limitations
 
-1. **Playtested by the author only, and never by failing.** Both fork routes were played by a
-   human with a keyboard on 2026-09-24 — high line first, fork-pad entry jump cleared on the
-   first attempt, low road afterwards, no trouble on either
-   ([TEST-REPORT §5](TEST-REPORT.md)). Two things this does **not** cover: the player died zero
-   times across both sessions, so **the retry loop and the two death messages have never been
-   felt by a person**, only machine-verified; and the player designed the level, so first-time
-   legibility — whether the fork reads as a choice at all — remains completely untested.
+1. **Playtested by the author only.** Three sessions on 2026-09-24: high line (fork-pad entry
+   jump cleared first try), low road, then deliberate deaths on each hazard
+   ([TEST-REPORT §5](TEST-REPORT.md)). Found one real thing — the retry feels fast, but the
+   death card *"flashes past"*: you get the gist, there is no time to read it properly. Left
+   unchanged as a deliberate trade, documented in [TEST-REPORT §4 cycle 4](TEST-REPORT.md).
+   Still untested: **first-time legibility**. The player designed the level and knew every
+   landing, so whether the fork reads as a choice to someone seeing it cold is unknown.
 2. **The film's walkthrough is partial by one feature.** Pause-on-focus-loss is implemented and
    machine-checked, but an unattended capture cannot lose window focus, so there is no footage
    of it. The skill's coverage check therefore **fails on that one item by design** — it was not
