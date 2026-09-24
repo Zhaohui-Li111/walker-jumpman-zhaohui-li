@@ -245,15 +245,26 @@ run from `godot --path godot` in a normal game window with a keyboard.**
 
 ### What the player actually reported
 
-Verbatim, in full:
+Verbatim, in full, across two exchanges:
 
 > 我试玩了，没有问题，可以通关
 > *("I playtested it, no problems, can complete it.")*
+
+> 我一次就过，走的上面的路
+> *("I cleared it on the first try, took the high line.")*
 
 ### What that establishes
 
 - A human, playing with a keyboard rather than a scripted driver, **reached the
   relocated finish**. Completion is no longer only a machine claim.
+- **The fork-pad entry jump was cleared on the first attempt.** This is the jump
+  this report has flagged since §6.2 as the tightest input in the level, with a
+  take-off window *calculated* at roughly 46 px of run-up and never measured.
+  It is not brutally tight in practice. See the caveat below before treating
+  that as settled.
+- **The high line was the route taken**, and it completed — including the final
+  run-off from ledge B onto the finish pad, which is the one landing in the
+  level that is reached without a jump.
 - Nothing blocked, crashed, soft-locked or read as broken badly enough to be
   worth mentioning.
 
@@ -263,13 +274,14 @@ This is a brief report, and it is recorded as brief rather than written up into
 something it is not. It does **not** answer the questions this report has been
 flagging as open since §6:
 
-| Open question | Still open? |
+| Open question | Status after this session |
 |---|---|
-| Does the fork-pad entry jump feel tight? (calculated ~46 px window, never measured) | **Yes** — not reported on |
-| Did the fork read as a *choice*, or did momentum pick the line? | **Yes** — not reported on |
-| Which route was taken; was the other one ever tried? | **Yes** — not reported |
-| Where did deaths happen, and did the ~0.55 s retry feel fast enough? | **Yes** — no deaths reported, none described |
-| Was the relocated finish findable without prior knowledge? | **No** — the player authored the level, so they cannot test discoverability |
+| Does the fork-pad entry jump feel tight? | **Partly answered.** Cleared first try. But n=1, by the person who placed the platform — this is evidence the window is not brutal, **not a measurement of its width**. The sweep in §6.2 is still the only thing that would settle it. |
+| Which route was taken? | **Answered: the high line.** |
+| **Has the low road ever been played by a human?** | **No.** The spike cluster, the 64 px pit and the "Missed the landing" recovery in Zone 03 are verified by machine checks and appear in the film, but **no person has played that half of the fork.** |
+| Did the fork read as a *choice*, or did momentum pick the line? | **Still open** — not reported on, and the player already knew both routes existed. |
+| Did the ~0.55 s retry feel fast enough? | **Still open** — no deaths occurred, so the retry loop was never exercised by a human. |
+| Was the relocated finish findable without prior knowledge? | **Still open, and untestable by this player** — they authored the level. |
 
 **The author is not a naive player.** They knew where every landing and hazard
 was before starting, so this session cannot speak to first-time legibility,

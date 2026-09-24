@@ -218,18 +218,32 @@ evidence receipts do, and the receipts are timestamped independently
 
 **2026-09-24.** Played the build at `cc8ae01` with a keyboard, in a normal game window.
 
-**What I reported, in full:** *"我试玩了，没有问题，可以通关"* — I played it, no problems,
-can complete it.
+**What I reported, in full:** *"我试玩了，没有问题，可以通关"* and, when asked which route and
+whether the fork-pad jump gave me trouble, *"我一次就过，走的上面的路"* — cleared it on the
+first try, took the high line.
 
-**What I learned:** the level is completable by a person, not just by the driver. That was the
-one thing a scripted route genuinely could not tell me, and now it is settled.
+**What I learned:**
 
-**What I did not learn, and should be honest about.** I wrote this down as one sentence, and one
-sentence is not a playtest report. I did not record which line I took, whether I ever tried the
-other one, whether the fork-pad jump felt tight, or where I nearly died. So the specific
-uncertainty I have been carrying since §10 — the ~46 px take-off window that is *calculated and
-never measured* — is **still untested**. My own play did not measure it, and "it felt fine" from
-the person who placed the platform is close to worthless as evidence.
+1. The level is completable by a person, not just by the driver. That was the one thing a
+   scripted route genuinely could not tell me.
+2. **The fork-pad entry jump went first try.** This is the input I have been most worried about
+   since writing the brief — the one with a *calculated* ~46 px take-off window that I never
+   measured. Clearing it cold, without retries, says the window is not brutal.
+
+**Why I am not calling #2 settled.** One success, by the person who placed the platform and knew
+exactly where to jump from, is evidence that the jump is *possible under ideal knowledge*. It is
+not a measurement of the window, and it is not a test of whether a stranger finds the take-off
+point. The number stays "calculated, never measured" in the report, because that is what it is.
+
+**What this session exposed that I had not thought about.** I took the high line — which means
+**nobody has ever played the low road.** The spikes, the 64 px pit and the "Missed the landing"
+recovery are covered by machine checks and appear in the film, but half of the fork I designed
+as a genuine choice has never been experienced by a human being. I only noticed because I was
+asked which route I took. If I had written "no problems, completed it" and stopped, that gap
+would have gone straight into the submission unrecorded.
+
+**Also untested as a side effect:** I died zero times, so a person has never seen the retry loop.
+The ~0.55 s recovery I have been describing as "cheap" is still a number from a test, not a feel.
 
 **The deeper problem with this playtest:** I built the level. I knew where every landing, hazard
 and pit was before I pressed Enter. I cannot test whether the fork reads as a choice, because I
@@ -238,9 +252,12 @@ nothing about legibility.
 
 **What I would do next, in order:**
 
-1. Hand it to one person who has never seen it, say nothing, and watch where they die.
-2. Run the take-off-window sweep — the prompt the film hands the viewer — so the fork-pad jump
-   becomes a number instead of a feeling.
+1. **Play the low road myself.** It is the cheapest gap to close and I should not have shipped
+   without doing it — the hazard half of my own fork is unplayed.
+2. Hand it to one person who has never seen it, say nothing, and watch where they die and which
+   line they take. That is the only way to learn whether the fork reads as a choice.
+3. Run the take-off-window sweep — the prompt the film hands the viewer — so the fork-pad jump
+   becomes a number instead of a first-try anecdote.
 
 **Human / AI.** Entirely human: the AI did not play the game and does not claim to have. It
 recorded this session in my words and wrote down what the session does not cover, rather than

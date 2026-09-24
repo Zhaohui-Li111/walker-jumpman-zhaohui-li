@@ -135,11 +135,12 @@ cycles: **[TEST-REPORT.md](TEST-REPORT.md)**.
 
 ## Known limitations
 
-1. **One playtest, by the author, and it was brief.** A human completed the level with a
-   keyboard on 2026-09-24 and reported no problems ([TEST-REPORT §5](TEST-REPORT.md)). That
-   settles completability. It settles nothing about legibility: the player designed the level
-   and knew where every landing was. **No naive player has seen it.** Whether the fork reads as
-   a choice to someone encountering it cold is still unknown.
+1. **One playtest, by the author, on one of the two routes.** A human completed the level with
+   a keyboard on 2026-09-24, taking the **high line**, clearing the fork-pad entry jump first
+   try ([TEST-REPORT §5](TEST-REPORT.md)). Two gaps remain: **nobody has played the low road** —
+   the spikes and the pit are machine-verified only — and no naive player has seen the build at
+   all, so whether the fork reads as a choice is still unknown. The player also never died, so
+   the retry loop has never been felt by a human.
 2. **The film's walkthrough is partial by one feature.** Pause-on-focus-loss is implemented and
    machine-checked, but an unattended capture cannot lose window focus, so there is no footage
    of it. The skill's coverage check therefore **fails on that one item by design** — it was not
