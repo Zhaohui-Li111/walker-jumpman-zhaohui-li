@@ -133,4 +133,90 @@ Camera clamps at `width - 320`. If I get the arithmetic wrong, or if the flag's 
 
 ## 6. Revisions after the fact
 
-*(Nothing yet — entries get appended here with dates as implementation proceeds. Predictions above stay as written.)*
+**Everything above is exactly as written on 2026-09-23 before implementation.** Nothing in
+§1–§5 has been edited to make a prediction look better. This section is the correction log.
+
+### 6.1 Scoring the four predicted failures, honestly
+
+| # | Predicted | What happened |
+|---|---|---|
+| **F1** | Route fixture breaks, dies at the old level edge | **Right, including the mechanism.** `jump_marks_used: 5` (marks exhausted), died at x≈1046 crossing `fall_y`. Fixed by extending the fixture; the 900-tick budget and `deaths == 0` were not relaxed. |
+| **F2** | Jumps may be *unreachable* because the closed form ignores 60 Hz integration | **Wrong, and wrong in the comforting direction.** Discrete stepping *overshoots*: measured rise **56.07 px** against the predicted 53.3. Jumps came out easier, not harder. Budgeting with the pessimistic number cost nothing. |
+| **F3** | Character art will poke outside the 18×28 collider, worst at the pack and the domed head | **Right as a risk; the method killed it before it shipped.** Authoring in mirrored "facing-right" space plus a red collider overlay caught it immediately. The head radius did have to be held at 5.2 px centred at y=−22.6 to top out at −27.8. |
+| **F4** | Relocated finish reachable but unreadable; flag pole hard-coded to y=320 | **Half right.** The pole fix was genuinely needed and made. But the readability failure that actually occurred was a *label* sitting inside the jump arc — a thing this brief never imagined. |
+
+**Three of four were useful. The one that was wrong was wrong safely. And the bug that actually
+cost the most time was in a category none of the four anticipated** — see 6.2.
+
+### 6.2 The failure I did not predict: vertical stacking imposes a headroom budget
+
+The brief's §3 laid the two fork routes **on top of each other** — a low road at y=320 with two
+floating ledges at y=256 directly above it — and treated "miss the high line, fall into the
+spikes" as a feature.
+
+That layout is geometrically impossible for the route underneath. BEACON is 28 px tall and
+jumps 56 px, so a jump needs **84 px** of headroom; the planned ledge underside sat **48 px**
+above the low road. The low road's spike jump clipped the ledge, rose **17 px instead of 56**,
+and died on the hazard it was clearing.
+
+Found by writing `probe_route.gd` and reading a tick-by-tick trace, not by inspection. Full
+account in [TEST-REPORT §1](TEST-REPORT.md).
+
+**What this brief should have contained and did not:** a headroom rule alongside the gap and
+step-up rules in §1 — *no platform may overhang a place where the route below must jump, unless
+its underside clears body height + jump height.*
+
+### 6.3 Geometry actually shipped, against the plan in §3
+
+| Piece | Planned in §3 | Shipped | Why it moved |
+|---|---|---|---|
+| Fork pad | `[1032, 288, 96, 32]`, 72 px gap | `[1016, 288, 112, 32]`, **56 px gap** | The 72 px version left a take-off window of only ~31 px of run-up. Widened the pad and shortened the gap to open it to ~46 px. |
+| Low road | `[1168, 320, 248, 64]` | `[1152, 320, 232, 64]` | Moved left so the drop off the fork pad lands on it reliably rather than marginally. |
+| — | *(not planned)* | **step `[1168, 248, 56, 12]`** | Added. The high line could not reach y=216 in one jump from y=288, and y=216 is where it has to be to clear the low road's headroom. |
+| High ledge A | `[1176, 256, 72, 16]` | `[1264, 216, 80, 12]` | Raised 40 px and moved right — the 6.2 fix. Clearance over the low road went 48 px → **92 px** against the 84 px requirement. |
+| High ledge B | `[1296, 256, 72, 16]` | `[1392, 216, 96, 12]` | Same, and lengthened so it overhangs the finish pad. |
+| Finish pad | `[1432, 320, 168, 64]` | `[1448, 320, 152, 64]` | Shifted to keep the pit a clean 64 px. |
+| Spikes | `[1272, 304, 24, 16]` | unchanged | The one piece of Zone 03 that shipped exactly as planned. |
+
+**What the redesign cost:** the "miss the high line and land in the spikes" moment is gone. The
+gap between the ledges now drops you onto safe road. I preferred a reachable level to a
+narratable one, and the film says so rather than pretending the current design was the intent.
+
+### 6.4 Predictions in §3 that held
+
+- **Camera needed no code change.** The brief flagged this as "the kind of thing I expect to be
+  wrong about." It was right: the clamp is `width − 320` = 1280, which puts the flag at 1548
+  on screen with no edit.
+- All six presentation items in §3 were genuinely required. The spike baseline was the
+  interesting one — the new cluster also sits at y=320, so the starter's hard-coded literal
+  would have *looked* correct while being wrong by luck. Made data-driven anyway.
+- Labels moved once more than planned, from y=150/170 to **y=118/138**, after a render showed
+  them inside the high line's jump arc.
+
+### 6.5 The constraint in §2 held exactly
+
+`tuning.gd` diff against the starter is **empty**. The collider is untouched. `low-ceiling`
+reports `300.000274658203` before and after the character swap — bit-identical. No drawn pixel
+leaves the 18×28 box in any of the six states.
+
+The one deliberate inward exception named in §2 — a ≤2 px boot lift during a grounded walk
+stride — is the only gap between art and collider, and it cannot occur airborne.
+
+### 6.6 Added after the brief, outside its scope
+
+The brief was written before the Brutalist skill was available, so it says nothing about the
+film. What the film work added to the *game* repository: `tests/probe_route.gd` (the diagnostic
+that found 6.2), `tests/map_board.gd` + `capture_map.gd` (the whole-level map), and
+`tests/capture_character.gd` + `character_board.gd` (the collider contact sheet).
+
+### 6.7 What the playtest changed, 2026-09-24
+
+The brief's §4 predicted mechanical failures. The human playtest found a **usability** one it
+had no category for: the retry is fast enough that the death card *"flashes past"* — the gist
+arrives, there is no time to read it. Both messages are correct and machine-checked; neither is
+comfortably legible at 0.55 s. Recorded as a named design tension in
+[TEST-REPORT §4 cycle 4](TEST-REPORT.md) and deliberately **not** fixed.
+
+The fork-pad entry jump — the §4 F2 descendant, and the tightest input in the level — was
+cleared **first try**. That is evidence the ~46 px window is not brutal. It is still not a
+measurement, and the brief's figure remains *calculated, never measured*.
