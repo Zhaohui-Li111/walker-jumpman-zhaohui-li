@@ -1,5 +1,33 @@
 {
-  "status": "failed",
-  "error": "[art] command failed:\nC:\\Users\\rockefeller\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\courses\\7270\\brutalist.art-main\\brutalist.art-main\\runtime\\qc\\final_frame_check.py D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough --mp4 D:\\courses\\7270\\brutalist.art-main\\brutalist.art-main\\renders\\.claude-liam-walker-jumpman-zhaohui-li-walkthrough-candidate-8e0kmmka\\candidate.mp4 --sheet D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\clips\\_work\\resolved-sheet.json\n",
-  "at": "2026-09-23T20:54:05.908301-04:00"
+  "status": "ready",
+  "output": "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\exports\\landscape\\claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4",
+  "sha256": "952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25",
+  "duration_s": 135.56666666666666,
+  "input_sha256": {
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B00.mp4": "fdc73a1b30c606397145962df76e667f43862727a11d6aeeefb39ccc041767c4",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B01.mp4": "919b5f084bf5a39044cedd6d660fa3d3c733bd004ad020fbcb25e53cb674a93e",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B02.mp4": "1eb0593fb2d6d02ba1384b1d1fc1a97b10e3d13ea7313c85ed3177c944046e42",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B03.mp4": "2a71acc76b828fb8fbe439cc238fe57772a11f881217f916e106587de78d552f",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B04.mp4": "05a9f892846a3d97c31c5557461bd539fa4ae32b90b99b136e8cc625df141944",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B05.mp4": "00aa78c8071f6a0235549d85673afd3debcfe2c6d0b08e16af442bdc5949f94d",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B06.mp4": "91cccb75811395c5ab116a519d7d33698eb5998a75751519712bba44b06a7d1c",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B07.mp4": "6d899bdee53d2f9ea5b1b6cb1fe68871d4dca5dd98678335c88201864fabfecb",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B08.mp4": "0590b3b4670be503aefadd3987b30f927223b808a0106214df2813b280dc9d2e",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B09.mp4": "b5c3fe99946395fddf57ebbb5d4e16ec8b49925c3810d7b99ec58d60d2cb9383",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B10.mp4": "fd95a828e98791f7770ef043637ca3fb1ee368798a60c5f27df02b7c27a99876",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\media\\B11.mp4": "41d0e6c7baf6f773613c79ec874c04d5ab9788bc7b4ae0da3038d2e12092743f",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B00.mp3": "29826f73e7d08b7ac4216ab76cc41849d31d4a05dba33b41aebe1ced4a02fd4b",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B01.mp3": "f71fc178390db44e0244f64eaaa661de3f847fd45a95b16830b41165f669cf1e",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B02.mp3": "1e1f589c6d35a9b859b8cc5730b329b34d832a480dbc82b87f04e7ad11c936e7",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B03.mp3": "300f19162792f0e5f1c7bbf2cf875624c5639430ba8272e90ba55b4080f5ea21",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B04.mp3": "fd1bb57e61c5700b455026e03d68319f5b7177aeebbd4525a02af5f0170e0be0",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B05.mp3": "2a56a89d9a04ecfc801d3babb64c68217697822eabc083253c74dc1a20cb159e",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B06.mp3": "4f1915136b19796f5208159d922ca3f577a93300405d6f08139790372294c9d5",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B07.mp3": "182f0b90528a709333663ea6000c41dfb2ce9671822ad76bb12e4167b923a2cb",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B08.mp3": "2f4528554803c0358a61bacab7ae9334c3ac21abcc6dc5d7b9b667a01c371437",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B09.mp3": "02521d356d1860b40bea6dbcc1132f958325c4be5ed575a75ca04d9738b95404",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B10.mp3": "23638f5e4d6db2407f03193ec1e4b00afa8e9c0c703e4718a63ee9c20745ceff",
+    "D:\\courses\\7270\\walker-jumpman-main\\walker-jumpman-Zhaohui Li\\youtube\\claude-liam-walker-jumpman-zhaohui-li-walkthrough\\mp3\\beat-B11.mp3": "d386ff84153797b6130ea371679d96240dd612c6607913f2dbcd387857e133d5"
+  },
+  "at": "2026-09-24T01:36:28.383103+00:00"
 }

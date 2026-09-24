@@ -138,9 +138,10 @@ cycles: **[TEST-REPORT.md](TEST-REPORT.md)**.
 1. **No human playtest recorded yet.** Every playability claim here is machine evidence only
    until [TEST-REPORT §5](TEST-REPORT.md) and [FRICTIONAL §9](FRICTIONAL.md) are filled in.
    An automated input route proves geometry is reachable, not that a level is any good.
-2. **The explainer film is not produced.** The required Brutalist `godot-walkthrough` skill is
-   not installed on this machine and has been requested; see [SOURCES.md §6](SOURCES.md).
-   `film/` holds the beat sheet and script prepared for it.
+2. **The film's walkthrough is partial by one feature.** Pause-on-focus-loss is implemented and
+   machine-checked, but an unattended capture cannot lose window focus, so there is no footage
+   of it. The skill's coverage check therefore **fails on that one item by design** — it was not
+   relabelled to obtain a pass. Stated on screen in the Verdict.
 3. **The fork-pad entry jump is the tightest input in the level** — roughly a 46 px run-up
    window (≈0.29 s). That figure is calculated, not measured.
 4. **Nothing checks label placement.** One label overlapped the jump arc in a first render; it
@@ -173,12 +174,30 @@ Starter documentation, retained as received: [GAME-BRIEF](GAME-BRIEF.md) · [GDD
 
 ## Final film
 
-**Not yet rendered** — blocked on the Brutalist `godot-walkthrough` skill (see
-[SOURCES.md §6](SOURCES.md)). When it exists, this section will carry:
+**Walker Jumpman, Extended** — 2 min 16 s, landscape, native 4K. Built with the Brutalist
+`godot-waikthrough` skill in `walker` mode; Liam narration via local Kokoro `am_onyx`.
 
-- Film URL (course media storage, not this repository)
-- Exact filename
-- SHA-256 checksum
-- The game-source commit the film demonstrates
+| | |
+|---|---|
+| **Filename** | `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4` |
+| **SHA-256** | `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25` |
+| **Spec** | 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 135.57 s, 14.4 MB |
+| **Game source demonstrated** | commit `cc8ae01`, `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` (verified to match `godot/` at submission) |
+| **URL** | *pending upload to course media storage* |
 
-MP3, MP4 and files over 25 MB are excluded from this repository by `.gitignore`.
+The film shows the real modified game played through its own keyboard input — both fork routes,
+two genuine deaths with recovery, completion at the relocated flag, and replay. Every gameplay
+frame is labelled **SCRIPTED INPUT · not a human playtest**, because that is what it is.
+
+It states on screen what is **not** shown (pause on focus loss), what a scripted route cannot
+prove (fairness), and the one number this project never measured (the fork-pad take-off window).
+
+The reel — beat sheet, coverage contract, riff notes, capture provenance, fact-check, build log
+and QC reports — is in
+[`youtube/claude-liam-walker-jumpman-zhaohui-li-walkthrough/`](youtube/claude-liam-walker-jumpman-zhaohui-li-walkthrough/).
+The MP4, the 262 MB capture and the narration MP3s are **not** in this repository: `.gitignore`
+excludes MP3/MP4 and the reel's `capture/`, `media/`, `clips/`, `audio/`, `mp3/` directories.
+
+Quality gates on the submitted export: **Gate V visual QC 0 BLOCKER / 0 MAJOR** across 24 sampled
+frames, **GATE T type-lock PASS**, and a `.verified.json` receipt whose recorded SHA-256 matches
+the delivered file and which hashes all 24 inputs.

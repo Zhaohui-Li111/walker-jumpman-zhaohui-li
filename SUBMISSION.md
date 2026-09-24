@@ -5,10 +5,11 @@
 **Project name:** walker-jumpman-zhaohui-li
 **GitHub repository/folder URL:** *(pending — repository not yet pushed; see §Blocked below)*
 **Submitted commit SHA:** *(read from `git rev-parse HEAD` after the final commit and paste here and into Canvas — a commit cannot contain its own SHA)*
-**Game-source revision shown in the film:** `adc7f4e` — *Record evidence: rerendered screens and machine-check receipts*
+**Game-source revision shown in the film:** `cc8ae01` — verified: the `godot/` tree hashes to `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9`, which is the id recorded in the film's `coverage.json`, and `godot/` is unchanged in every commit after it
 **Godot version and operating system:** Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/OpenGL · Windows 11 Home China (10.0.26200)
-**Final film URL and filename:** *(pending — see §Blocked)*
-**Final film SHA-256:** *(pending)*
+**Final film URL and filename:** *URL pending upload to course media storage* · `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
+**Final film SHA-256:** `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25`
+**Final film spec:** 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 135.57 s (2:16), 14.4 MB
 
 ---
 
@@ -73,21 +74,37 @@ pinned by a regression check.
 
 ---
 
-## Blocked
+## The film
 
-Two required deliverables are not complete, and are reported as incomplete rather than
-substituted:
+Built with the course-provided Brutalist toolkit — `skills/make/godot-waikthrough` in `walker`
+mode, following its own instructions and the specs it requires. 12 beats: reconstructed Walker
+ask → hesitant-writer BLUF → six gameplay beats → a cause-and-effect beat on the level map →
+Verdict → Your Turn → the locked spoken outro.
 
-**The Brutalist explainer film.** The course-provided `godot-walkthrough` skill (original
-spelling `godot-waikthrough`) is **not installed on this machine**. Verified by searching
-`~/.claude/` (no `skills/` directory), `~/.claude/plugins/`, and the course tree for
-`brutalist`, `walkthrough` and `waikthrough` — no match. The assignment says to request the
-course-provided version rather than proceed. No substitute workflow was used, because producing
-a video another way and calling it a Brutalist explainer would misrepresent the workflow.
-`film/BEAT-SHEET.md`, `film/SCRIPT.md` and `film/EVIDENCE-INDEX.md` are written and the render
-is the only remaining step.
+Gameplay is a native 3840 × 2160 Godot Movie Maker capture driven by **real `InputEventKey`
+events** — no teleports, no completion-setting, no test-only shortcuts. The driver asserts all
+13 phases and quits nonzero on failure; the submitted run passed with zero failed expectations
+over 1812 physics ticks. Every gameplay frame carries a burned-in **SCRIPTED INPUT · not a human
+playtest** label.
 
-**The human playtest.** Mine, to do; not delegable.
+Gates on the submitted export: **Gate V 0 BLOCKER / 0 MAJOR** (24 frames), **GATE T PASS**, and a
+`.verified.json` receipt whose SHA-256 matches the delivered file.
+
+**The skill's coverage check fails on exactly one item, by design:** `pause-on-focus-loss` is
+implemented and machine-checked but cannot be filmed by an unattended capture. It is recorded as
+`implemented` with empty evidence rather than relabelled `planned` to force a pass. A diagnostic
+run of the same verifier with that one feature excluded returns `PASS` — 16 implemented features,
+16 evidence intervals, 5 planned. Stated on screen in the Verdict beat.
+
+One line of the course toolkit was patched (`remotion_scenes.py`, `npx` → `shutil.which("npx")`,
+a Windows-only exec bug that made every bookend beat fail). Two other toolkit bugs were hit and
+deliberately not patched. All three are in the reel's `BUILD-LOG.md`.
+
+## Still outstanding
+
+**The human playtest.** Mine, to do; not delegable. `TEST-REPORT.md §5` and `FRICTIONAL.md §9`
+are deliberately empty until it happens, and every playability claim in this submission is
+machine evidence only until then.
 
 ---
 
@@ -98,8 +115,10 @@ is the only remaining step.
 - [x] `CHANGE-BRIEF.md` written before implementation and not rewritten
 - [x] `TEST-REPORT.md`, `FRICTIONAL.md`, `SOURCES.md` present
 - [x] Caches and credentials excluded (`.godot/`, `.claude/`, `.env`); no MP3/MP4; nothing > 25 MB
+- [x] Film rendered with the Brutalist workflow; frames inspected across the whole export; filename + SHA-256 recorded above
+- [x] Film verified to depict the submitted game source (`build_id` match, not just a claim)
 - [ ] Human playtest recorded in TEST-REPORT §5 and FRICTIONAL §9
-- [ ] Film rendered with the Brutalist workflow, watched end to end, filename + SHA-256 recorded
+- [ ] Film uploaded to course media storage; URL filled in above and in README
 - [ ] Repository pushed; reviewer access to source and media tested
 - [ ] Fresh clone of the submitted revision re-run and re-verified
 - [ ] Final commit SHA pasted into Canvas and into this file's header

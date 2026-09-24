@@ -74,7 +74,11 @@ read against the cream `#f6f3ec` background.
 | Claude Code (Opus 5) | — | Interactive coding assistant, one session, 2026-09-23 |
 | Git | — | Version control |
 | Windows 11 Home China | 10.0.26200 | Host OS |
-| Brutalist `godot-walkthrough` skill | **not installed — see §6** | Required for the explainer film |
+| Brutalist toolkit (`brutalist.art`) | `skills/make/godot-waikthrough` + `riff`, `ai-explainer` | The required explainer workflow — see §6 |
+| Kokoro TTS (`kokoro-onnx`, `am_onyx`) | model `kokoro-v1.0.onnx` v1.0 | Liam's narration. Local, free, no key |
+| Remotion | 4.0.x via `runtime/remotion` | Bookend scenes, rendered at 4K |
+| ffmpeg / ffprobe | 9.0.2 (Gyan) | Capture probing, clip cutting, final mux |
+| Node.js | v22.17.1 | Remotion runtime |
 
 No paid services, no API credits, no paid asset generation, no third-party libraries.
 
@@ -117,20 +121,41 @@ script, visuals and narration were AI-generated, and the film itself will say so
 
 ---
 
-## 6. Blocked dependency: the Brutalist explainer skill
+## 6. The Brutalist explainer workflow
 
-The assignment requires the course-provided **Brutalist `godot-walkthrough`** skill (original
-spelling `godot-waikthrough`) with the `walker` modifier, and says: *"If your checkout lacks the
-skill, request the course-provided version before proceeding."*
+The film was produced with the course-provided **Brutalist** toolkit, using
+`skills/make/godot-waikthrough` with the **`walker`** modifier, following its own instructions
+and the specs it requires (`references/capture-and-coverage.md`, `riff`, `ai-explainer`,
+`RENDER-TARGETS.md`, `OUTRO-LOCK.md`, `docs/PIPELINE-SAFETY.md`). The skill was initially absent
+from this machine and was supplied part-way through; nothing was substituted for it.
 
-**It is not present on this machine.** Verified by searching `~/.claude/` (no `skills/`
-directory exists), `~/.claude/plugins/` (only the official Claude marketplace), and the
-`D:\courses` tree, for `brutalist`, `walkthrough` and `waikthrough`. No match.
+Reel: [`youtube/claude-liam-walker-jumpman-zhaohui-li-walkthrough/`](youtube/claude-liam-walker-jumpman-zhaohui-li-walkthrough/).
 
-The film has therefore **not** been produced, and no substitute workflow was used in its place —
-producing a video by some other route and calling it a Brutalist explainer would misrepresent
-the workflow used. `film/` contains the beat sheet, narration script and evidence index prepared
-for that workflow, so the render is the only remaining step once the skill is available.
+**What the workflow produced, and how it is checked**
+
+| Artefact | Notes |
+|---|---|
+| `capture/run-01.avi` | Native **3840×2160** Godot Movie Maker run, scripted keyboard input, driver-asserted. Offline render, **not** a frame-rate measurement. |
+| `coverage.json` | Generated from the capture's own tick log and file bytes. 16 features with footage, 1 accepted partial, 5 planned. |
+| `beat_sheet.json` | 12 beats in walker order: ask → BLUF → gameplay → cause-and-effect → Verdict → Your Turn → locked outro. |
+| `mp3/beat-*.mp3` | Kokoro `am_onyx`, local, free. Durations are the film's clock. |
+| `exports/landscape/*.mp4` | 4K master + a `.verified.json` receipt hashing every input. |
+
+**One patch was made to the course toolkit**, and only one:
+`runtime/scripts/remotion_scenes.py` invoked a bare `npx` through `subprocess`, which Windows
+`CreateProcess` cannot resolve to `npx.CMD`, so every bookend beat failed. Fixed with
+`shutil.which("npx")`, one line, no behaviour change off Windows. Two other toolkit bugs were hit
+and deliberately **not** patched. All three, and the reasoning, are in
+[BUILD-LOG.md](youtube/claude-liam-walker-jumpman-zhaohui-li-walkthrough/BUILD-LOG.md).
+
+Two places where the toolkit's own documentation or examples were **not** followed, because they
+conflicted with a newer lock or with the code:
+
+1. The outro follows `OUTRO-LOCK.md` as locked 2026-09-18 (spoken title + handle, no jingle),
+   not the toolkit's own exemplar reel, which predates the lock and still carries a jingle.
+2. `ai-explainer`'s hesitant-writer law says to put a whole phrase in `triggerWords`. The shipped
+   `BrutalistHesitantWriter` matches triggers **per word**, so a phrase silently does nothing —
+   the correction never rendered. Reworked onto a single-word trigger and verified on frames.
 
 ---
 

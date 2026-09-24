@@ -183,10 +183,25 @@ def main():
                     "pattern": "BrutalistHesitantWriter",
                     "props": {
                         "contextTitle": "BLUF",
-                        "text": "walker-jumpman-zhaohui-li is a new game:\nnew character, one more zone, same jump.",
-                        "triggerWords": "a new game",
-                        "replacementWords": "an extension of Bear's starter",
-                        "fontSize": 84,
+                        # BrutalistHesitantWriter matches triggers PER WORD:
+                        #   triggers.indexOf(core.toLowerCase())  where core is one
+                        #   token stripped of punctuation.
+                        # A multi-word trigger can never match, so the phrase
+                        # "a new game" -> "an extension of Bear's starter" silently
+                        # did nothing and the correction never landed. The
+                        # misconception is carried by a single verb instead:
+                        # "was built" -> "was extended", which is the reel's actual
+                        # claim and leaves a sentence that stands on its own.
+                        # Three lines at 88pt, not two at 84: Gate V failed the
+                        # two-line version for `underfill` (46% of the safe area
+                        # against a 55% floor) because the correction pass leaves
+                        # less text on screen at the midpoint than straight typing
+                        # does. "same collider" is not padding - it is one of the
+                        # film's actual claims.
+                        "text": "walker-jumpman-zhaohui-li was built:\nnew character, one more zone,\nsame jump, same collider.",
+                        "triggerWords": "built",
+                        "replacementWords": "extended",
+                        "fontSize": 88,
                         "lineSpacing": 2.7,
                         "align": "center",
                         "seed": "8821",
