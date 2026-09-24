@@ -235,15 +235,27 @@ exactly where to jump from, is evidence that the jump is *possible under ideal k
 not a measurement of the window, and it is not a test of whether a stranger finds the take-off
 point. The number stays "calculated, never measured" in the report, because that is what it is.
 
-**What this session exposed that I had not thought about.** I took the high line — which means
-**nobody has ever played the low road.** The spikes, the 64 px pit and the "Missed the landing"
-recovery are covered by machine checks and appear in the film, but half of the fork I designed
-as a genuine choice has never been experienced by a human being. I only noticed because I was
-asked which route I took. If I had written "no problems, completed it" and stopped, that gap
-would have gone straight into the submission unrecorded.
+**What this session exposed that I had not thought about.** I took the high line — which meant
+**nobody had played the low road.** The spikes, the 64 px pit and the "Missed the landing"
+recovery were covered by machine checks and appeared in the film, but half of the fork I
+designed as a genuine choice had never been experienced by a human being. I only noticed
+because I was asked which route I took. If I had written "no problems, completed it" and
+stopped, that gap would have gone straight into the submission unrecorded.
 
-**Also untested as a side effect:** I died zero times, so a person has never seen the retry loop.
-The ~0.55 s recovery I have been describing as "cheap" is still a number from a test, not a feel.
+**Gap closed the same day.** I went back and played the low road: *"低路我也玩了，没啥问题"* —
+played it too, no real problems. Both halves of the fork have now been played by a person. The
+second spike cluster is jumpable at speed and the 64 px pit is crossable by hand, not just by
+the driver.
+
+**Still untested, and I want it on the record rather than buried:** across both sessions I
+**died zero times**. So no human has ever seen the retry loop. The ~0.55 s recovery I keep
+describing as "cheap", and the two distinct death messages I make a design point of in the film
+("Watch the spikes" vs "Missed the landing"), are still entirely machine evidence. I have
+verified they are *correct*; I have never verified they *feel* right, which is the only thing a
+playtest was supposed to add.
+
+There is a mild irony here worth naming: I designed a level around failure and retry, then
+tested it twice without failing once.
 
 **The deeper problem with this playtest:** I built the level. I knew where every landing, hazard
 and pit was before I pressed Enter. I cannot test whether the fork reads as a choice, because I
@@ -252,10 +264,12 @@ nothing about legibility.
 
 **What I would do next, in order:**
 
-1. **Play the low road myself.** It is the cheapest gap to close and I should not have shipped
-   without doing it — the hazard half of my own fork is unplayed.
+1. **Die on purpose, once on each hazard.** Two minutes, and it is the last thing in the level
+   I have verified only by machine. Walk into the spikes, walk off into the pit, and find out
+   whether half a second actually feels like "just another try" or like being yanked backwards.
 2. Hand it to one person who has never seen it, say nothing, and watch where they die and which
-   line they take. That is the only way to learn whether the fork reads as a choice.
+   line they take. That is the only way to learn whether the fork reads as a choice — I played
+   both routes deliberately, one after the other, which is not the same as choosing one.
 3. Run the take-off-window sweep — the prompt the film hands the viewer — so the fork-pad jump
    becomes a number instead of a first-try anecdote.
 

@@ -61,13 +61,15 @@ pinned by a regression check.
 
 ## Known limitations
 
-1. **One playtest, by the author, covering one of the two routes.** A human completed the level
-   with a keyboard on 2026-09-24, took the **high line**, and cleared the fork-pad entry jump on
-   the first attempt. Recorded verbatim in TEST-REPORT §5 and FRICTIONAL §9 with what it does
-   *not* establish: **the low road — the spike cluster and the 64 px pit — has never been played
-   by a human**; the player died zero times, so the retry loop is untested by feel; the player
-   designed the level, so first-time legibility is untestable by them; and the fork-pad take-off
-   window remains *calculated* at ~46 px rather than measured. No naive playtester recruited.
+1. **Playtested by the author only, and never by failing.** Both fork routes were played with a
+   keyboard on 2026-09-24 — high line first, fork-pad entry jump cleared on the first attempt,
+   low road afterwards, no trouble on either. Recorded verbatim in TEST-REPORT §5 and
+   FRICTIONAL §9 along with what it does *not* establish: **zero deaths across both sessions**,
+   so the ~0.55 s retry loop and the two distinct death messages are machine-verified but never
+   felt by a person; the player designed the level, so first-time legibility is untestable by
+   them and the fork was played route-by-route rather than *chosen* between; and the fork-pad
+   take-off window remains *calculated* at ~46 px rather than measured. No naive playtester
+   recruited.
 2. **The explainer film is not produced** — blocked, see below.
 3. The fork-pad entry jump is the tightest input in the level (≈46 px run-up window);
    that figure is calculated, not measured.

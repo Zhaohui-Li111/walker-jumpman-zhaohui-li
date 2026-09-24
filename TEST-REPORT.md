@@ -253,6 +253,9 @@ Verbatim, in full, across two exchanges:
 > 我一次就过，走的上面的路
 > *("I cleared it on the first try, took the high line.")*
 
+> 低路我也玩了，没啥问题
+> *("I played the low road too, no real problems.")*
+
 ### What that establishes
 
 - A human, playing with a keyboard rather than a scripted driver, **reached the
@@ -262,9 +265,13 @@ Verbatim, in full, across two exchanges:
   take-off window *calculated* at roughly 46 px of run-up and never measured.
   It is not brutally tight in practice. See the caveat below before treating
   that as settled.
-- **The high line was the route taken**, and it completed — including the final
-  run-off from ledge B onto the finish pad, which is the one landing in the
-  level that is reached without a jump.
+- **The high line was the route taken first**, and it completed — including the
+  final run-off from ledge B onto the finish pad, which is the one landing in
+  the level that is reached without a jump.
+- **The low road was played in a later session** and gave no trouble. Both
+  halves of the fork have now been played by a human, which was a gap flagged
+  after the first session. The second spike cluster is therefore jumpable by a
+  person at speed, and the 64 px pit is crossable.
 - Nothing blocked, crashed, soft-locked or read as broken badly enough to be
   worth mentioning.
 
@@ -278,9 +285,9 @@ flagging as open since §6:
 |---|---|
 | Does the fork-pad entry jump feel tight? | **Partly answered.** Cleared first try. But n=1, by the person who placed the platform — this is evidence the window is not brutal, **not a measurement of its width**. The sweep in §6.2 is still the only thing that would settle it. |
 | Which route was taken? | **Answered: the high line.** |
-| **Has the low road ever been played by a human?** | **No.** The spike cluster, the 64 px pit and the "Missed the landing" recovery in Zone 03 are verified by machine checks and appear in the film, but **no person has played that half of the fork.** |
-| Did the fork read as a *choice*, or did momentum pick the line? | **Still open** — not reported on, and the player already knew both routes existed. |
-| Did the ~0.55 s retry feel fast enough? | **Still open** — no deaths occurred, so the retry loop was never exercised by a human. |
+| Has the low road ever been played by a human? | **Answered: yes**, in a later session, with no trouble reported. Both halves of the fork have now been played. |
+| Did the fork read as a *choice*, or did momentum pick the line? | **Still open** — the player already knew both routes existed, and played them deliberately one after the other rather than choosing between them in the moment. |
+| Did the ~0.55 s retry feel fast enough? | **Still open.** No deaths were reported in either session, so the retry loop has still never been exercised by a person. The 0.55 s figure and the two distinct death messages remain machine evidence only. |
 | Was the relocated finish findable without prior knowledge? | **Still open, and untestable by this player** — they authored the level. |
 
 **The author is not a naive player.** They knew where every landing and hazard
