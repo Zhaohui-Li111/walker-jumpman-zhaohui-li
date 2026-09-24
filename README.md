@@ -187,7 +187,7 @@ Starter documentation, retained as received: [GAME-BRIEF](GAME-BRIEF.md) · [GDD
 | **SHA-256** | `09bfdfc689362efe6830f05ae8c2abe6c934a8ba5e4720eef55d62cecd7882b3` |
 | **Spec** | 3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 145.07 s, 14.7 MB |
 | **Game source demonstrated** | commit `cc8ae01`, `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9` (verified to match `godot/` at submission) |
-| **URL** | *pending upload to course media storage* |
+| **URL** | https://drive.google.com/file/d/1zgNUQ5ItB9XI64Gouuah-qUQD21IpmS8/view?usp=drive_link — public, anonymous access verified |
 
 The film shows the real modified game played through its own keyboard input — both fork routes,
 two genuine deaths with recovery, completion at the relocated flag, and replay. Every gameplay

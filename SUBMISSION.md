@@ -14,10 +14,15 @@
 
 **Godot version and operating system:** Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/OpenGL renderer · Windows 11 Home China (10.0.26200)
 
-**Final film URL and filename:** *URL pending upload to Google Drive (set to "anyone with the link — Viewer")* · `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
+**Final film URL and filename:** https://drive.google.com/file/d/1zgNUQ5ItB9XI64Gouuah-qUQD21IpmS8/view?usp=drive_link · `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
 
 **Final film SHA-256:** `09bfdfc689362efe6830f05ae8c2abe6c934a8ba5e4720eef55d62cecd7882b3`
-*(3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 145.07 s, 14.7 MB. If Drive re-encodes on upload, this hash describes the original master in the repo's `exports/landscape/`, not the streamed copy.)*
+*(3840 × 2160, 30 fps, h264 + AAC 48 kHz stereo, 145.07 s, 14,690 KB.)*
+
+**Verified after upload, not assumed:** the file was downloaded from the Drive link above with
+no cookies and no credentials, and hashes **byte-for-byte identically** to the local master and
+to the value recorded here. Drive did not re-encode it, and the link serves the file to an
+unauthenticated visitor — so this checksum describes exactly what a reviewer receives.
 
 ---
 
@@ -132,6 +137,6 @@ commits. Full breakdown in [SOURCES.md §4a](SOURCES.md).
 - [x] Film rendered with the Brutalist workflow, frames inspected across the whole export
 - [x] Film verified to depict the submitted game source (`build_id` compared, drift enumerated)
 - [x] Repository pushed, public; reviewer access tested by **anonymous clone**, suite re-run against it
-- [ ] Film uploaded to Google Drive, link set to "anyone with the link — Viewer", URL filled in above and in README
+- [x] Film uploaded to Google Drive; **anonymous download verified and SHA-256 matched byte for byte**
 - [ ] Canvas zip built as `Li_Zhaohui_CSYE7270_Assignment_1.zip` (excludes `.git`, `.godot`, media)
 - [ ] Final commit SHA pasted into Canvas and into this file's header
