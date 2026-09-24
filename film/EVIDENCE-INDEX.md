@@ -5,7 +5,7 @@
 Every artefact the film draws on, what it actually is, and how to regenerate it.
 Nothing here is a mock-up or a desktop screenshot; all images are real engine viewport output.
 
-## Screens 鈥?`evidence/screens/`
+## Screens — `evidence/screens/`
 
 | File | What it shows | Kind | Regenerate with |
 |---|---|---|---|
@@ -13,7 +13,7 @@ Nothing here is a mock-up or a desktop screenshot; all images are real engine vi
 | `02-failure.png` | BEACON dying on the starter's spike cluster, retry card visible | SCRIPTED | `capture_game.gd` |
 | `03-jump.png` | The starter's Zone 02 gap, new character | SCRIPTED | `capture_game.gd` |
 | `04-complete.png` | Completion at the relocated flag (x=1548), high line arrival | SCRIPTED | `capture_game.gd` |
-| `05-character-states.png` | Six BEACON poses with the exact 18脳28 collider in red | **FIXTURE** 鈥?bodies frozen on purpose, not gameplay | `capture_character.gd` |
+| `05-character-states.png` | Six BEACON poses with the exact 18×28 collider in red | **FIXTURE** — bodies frozen on purpose, not gameplay | `capture_character.gd` |
 | `06-zone3-fork.png` | Standing on the fork pad; both lines visible | SCRIPTED | `capture_game.gd` |
 | `07-zone3-high-line.png` | High line mid-climb, low road and spikes below, flag in frame | SCRIPTED | `capture_game.gd` |
 | `08-zone3-spike-jump.png` | Low road, clearing the Zone 03 spikes | SCRIPTED | `capture_game.gd` |
@@ -27,14 +27,14 @@ godot --path godot --script res://tests/capture_game.gd
 godot --path godot --script res://tests/capture_character.gd
 ```
 
-## Receipts 鈥?`evidence/`
+## Receipts — `evidence/`
 
 | File | Content | Used in the film for |
 |---|---|---|
 | `mechanics-1790192843.449.json` | **Baseline**, starter source, 25/25 | Beat 4: the `low-ceiling` number before the character change |
 | `mechanics-1790193254.788.json` | After BEACON, 25/25 | Beat 4: the same number after |
-| `mechanics-1790193396.732.json` | 25 checks, **1 failure** 鈥?predicted route break | Beat 11: the failing runs were kept |
-| `mechanics-1790193519.35.json` | 29 checks, **1 failure** 鈥?the headroom bug | Beat 9 |
+| `mechanics-1790193396.732.json` | 25 checks, **1 failure** — predicted route break | Beat 11: the failing runs were kept |
+| `mechanics-1790193519.35.json` | 29 checks, **1 failure** — the headroom bug | Beat 9 |
 | `mechanics-1790193781.822.json` | 31/31 after the redesign | Beat 9 |
 | `mechanics-1790194068.827.json` | 31/31 final | Beat 11 |
 | `keyboard-1790192851.968.json` | Baseline keyboard 9/9 | Beat 11 |
@@ -50,7 +50,7 @@ presented as this project's results.
 | 4 | `godot/features/player/player.gd` | `_ready()` collider construction; head of `_draw()` |
 | 9 | `godot/levels/first_steps.json` | the Zone 03 solids |
 | 9 | `godot/tests/test_game.gd` | `low-road-jump-not-clipped-by-high-line` |
-| 9 | trace text | quoted in [TEST-REPORT.md 搂1](../TEST-REPORT.md), regenerate with `probe_route.gd -- low` |
+| 9 | trace text | quoted in [TEST-REPORT.md §1](../TEST-REPORT.md), regenerate with `probe_route.gd -- low` |
 
 ```bash
 godot --headless --path godot --script res://tests/probe_route.gd -- low
@@ -60,10 +60,10 @@ godot --headless --path godot --script res://tests/probe_route.gd -- low
 
 - Filename: `claude-liam-walker-jumpman-zhaohui-li-walkthrough.mp4`
 - SHA-256: `952ac415a4cd0d2eb6d06d5fe10e76d41e6433eaef5a88ed07047ef95221ea25`
-- Spec: 3840 × 2160, 30 fps, h264 + AAC, 135.57 s, 14.4 MB
+- Spec: 3840 x 2160, 30 fps, h264 + AAC, 135.57 s, 14.4 MB
 - Storage location: course media storage *(upload pending)*
-- Game-source commit demonstrated: `cc8ae01` (`build_id` `0be6756a…3bf9`, verified against `godot/`)
-- Gates: Gate V 0 BLOCKER / 0 MAJOR · GATE T PASS · `.verified.json` receipt SHA matches
+- Game-source commit demonstrated: `cc8ae01` (`build_id` `0be6756a...3bf9`)
+- Gates: Gate V 0 BLOCKER / 0 MAJOR, GATE T PASS, `.verified.json` receipt SHA matches
 
 Built with the Brutalist `godot-waikthrough` skill in `walker` mode. The authoritative
 records are in the reel, not in this superseded planning folder — see

@@ -219,9 +219,9 @@ evidence receipts do, and the receipts are timestamped independently
 
 **2026-09-24.** Played the build at `cc8ae01` with a keyboard, in a normal game window.
 
-**What I reported, in full:** *"我试玩了，没有问题，可以通关"* and, when asked which route and
-whether the fork-pad jump gave me trouble, *"我一次就过，走的上面的路"* — cleared it on the
-first try, took the high line.
+**What I reported, in full:** *"I played it, no problems, can complete it."* And, when asked
+which route I took and whether the fork-pad jump gave me trouble: *"Cleared it on the first
+try, took the high line."*
 
 **What I learned:**
 
@@ -243,17 +243,18 @@ designed as a genuine choice had never been experienced by a human being. I only
 because I was asked which route I took. If I had written "no problems, completed it" and
 stopped, that gap would have gone straight into the submission unrecorded.
 
-**Gap closed the same day.** I went back and played the low road: *"低路我也玩了，没啥问题"* —
-played it too, no real problems. Both halves of the fork have now been played by a person. The
+**Gap closed the same day.** I went back and played the low road: *"I played the low road too,
+no real problems."* Both halves of the fork have now been played by a person. The
 second spike cluster is jumpable at speed and the 64 px pit is crossable by hand, not just by
 the driver.
 
 **The irony I then had to fix:** I designed a level around failure and retry, and playtested it
 twice without failing once. So I went back a third time and died on purpose on each hazard.
 
-**Third session, and the most useful thing any of this produced:**
-*"感觉挺快的，字幕一闪就过去了，掉进坑里确实显示 missed the landing"* — it feels fast, the
-caption just flashes past, and the pit does show "Missed the landing".
+**Third session, and the most useful thing any of this produced:** *"It felt quite fast — the
+caption just flashes past. Falling in the pit does show 'Missed the landing'."* And, on whether
+to fix it: *"Worth recording, but no need to change it — you can basically make out what it
+says. There just isn't time to read it properly."*
 
 Two confirmations and one small cost:
 
