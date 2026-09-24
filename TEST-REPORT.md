@@ -2,9 +2,13 @@
 
 **Engine:** Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/OpenGL renderer, 60 Hz physics
 **Machine:** Windows 11 Home China (10.0.26200), Intel UHD Graphics, `gl_compatibility`
-**Source revision under test:** commit `adc7f4e` (`Record evidence: rerendered screens and machine-check receipts`)
+**Game source under test:** `godot/` as of commit `cc8ae01`, content hash
+`0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9`. Every later commit is
+documentation, film or evidence only — `godot/` is unchanged in all of them, so all results
+below hold for the submitted revision. (Earlier drafts of this report cited `adc7f4e`; the
+game source is byte-identical between the two.)
 **Starter baseline revision:** commit `7f412c8` (`Import walker-jumpman First Steps starter, unmodified`)
-**Date:** 2026-09-23
+**Machine checks run:** 2026-09-23 · **Human playtest:** 2026-09-24 (§5)
 
 Reproduce:
 

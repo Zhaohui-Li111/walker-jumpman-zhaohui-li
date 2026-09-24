@@ -10,9 +10,10 @@ Where a claim can be checked, the commit, receipt file or command is named.
 (Opus 5), used as an interactive assistant in one working session. Where a decision
 and its implementation had different authors, both are named.
 
-> **Section 9 is not yet written.** It is the human playtest, and it is the one thing
-> in this project that an assistant cannot produce. It is left visibly empty rather
-> than filled with plausible-sounding text.
+> **Section 9 is the human playtest** — the one thing in this project an assistant
+> cannot produce. It was left visibly empty until it actually happened, rather than
+> filled with plausible-sounding text. It was written on 2026-09-24, in the player's
+> own words, across three sessions.
 
 ---
 

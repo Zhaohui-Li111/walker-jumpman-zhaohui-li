@@ -3,7 +3,7 @@
 **Assignment:** Assignment 1 — Extend Walker Jumpman
 **Student:** Zhaohui Li (li.zhaohui@northeastern.edu)
 **Project name:** walker-jumpman-zhaohui-li
-**GitHub repository/folder URL:** *(pending — repository not yet pushed; see §Blocked below)*
+**GitHub repository/folder URL:** *(pending — repository not yet pushed; see "Still outstanding")*
 **Submitted commit SHA:** *(read from `git rev-parse HEAD` after the final commit and paste here and into Canvas — a commit cannot contain its own SHA)*
 **Game-source revision shown in the film:** `cc8ae01` — verified: the `godot/` tree hashes to `build_id` `0be6756a1c222cf89964287272c5d6659111e6f50d2bb2f01969e8d03f963bf9`, which is the id recorded in the film's `coverage.json`, and `godot/` is unchanged in every commit after it
 **Godot version and operating system:** Godot `4.7.2.stable.official.ed1daf0bf`, Compatibility/OpenGL · Windows 11 Home China (10.0.26200)
@@ -71,7 +71,10 @@ pinned by a regression check.
    the level, so whether the fork reads as a choice to a stranger is unknown, and the fork-pad
    take-off window remains *calculated* at ~46 px rather than measured. No naive playtester
    recruited.
-2. **The explainer film is not produced** — blocked, see below.
+2. **The film carries one stale sentence.** Its Verdict beat says *"No human playtest yet"* —
+   true when it rendered on 2026-09-23 21:41, false the next morning. The film was not
+   re-rendered for it. The surrounding claim (scripted input proves reachability, not fairness)
+   is unaffected. Flagged here, in README and in SOURCES §5 rather than left to be discovered.
 3. The fork-pad entry jump is the tightest input in the level (≈46 px run-up window);
    that figure is calculated, not measured.
 4. Nothing checks label placement; one overlap was caught only by looking at a screenshot.

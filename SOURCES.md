@@ -111,13 +111,27 @@ The full, entry-by-entry account is in [FRICTIONAL.md §11](FRICTIONAL.md). Summ
 
 `CHANGE-BRIEF.md`, `TEST-REPORT.md`, `FRICTIONAL.md` and this file were **drafted by the AI from
 the actual session record** — real commands, real receipts, real failing runs — and reviewed by
-me. No entry describes an experience that did not happen. FRICTIONAL §9 (human playtest) is left
-empty precisely because an assistant cannot supply it.
+me. No entry describes an experience that did not happen. FRICTIONAL §9 (the human playtest) was
+held empty until the sessions actually happened on 2026-09-24, then written from the player's own
+words — quoted verbatim, including the one finding that went against the design.
 
 ### Film
 
-Not yet produced (§6). When it is, this section will state exactly which of the beat sheet,
-script, visuals and narration were AI-generated, and the film itself will say so on screen.
+| Element | Who |
+|---|---|
+| Beat structure, narration text, shot/`show` blocks | **AI-drafted**, from the measured capture and the project's own receipts; reviewed by me |
+| Narration voice | **AI** — Kokoro `am_onyx` ("Liam, in for Bear"), stated on screen and in the reel's docs |
+| Bookend visuals (B00, B01, B09, B10, B11) | Brutalist Remotion components, rendered deterministically; props authored by the AI |
+| Gameplay footage | **Neither** — real engine capture of the real game, scripted keyboard input, labelled as such on every frame |
+| The level-map beat (B08) | Rendered from `first_steps.json` by `godot/tests/map_board.gd`, so the diagram cannot drift from the level |
+| What the film claims, and its limits | **Mine.** The Verdict's four lines — including "no human playtest yet", true at render time — are the judgements I stand behind |
+| Every QC fix (5 defects) | AI found them by inspecting frames; I approved each fix |
+
+**Known staleness in the rendered film:** the Verdict beat says *"No human playtest yet."* That
+was true when it rendered (2026-09-23 21:41 UTC+8). The playtest happened the next day. The film
+was not re-rendered; the discrepancy is stated here, in README and in SUBMISSION rather than
+quietly left for a reviewer to find. The substantive claim around it — that scripted input proves
+reachability rather than fairness — is unaffected and still true.
 
 ---
 
