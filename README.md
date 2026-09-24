@@ -135,9 +135,11 @@ cycles: **[TEST-REPORT.md](TEST-REPORT.md)**.
 
 ## Known limitations
 
-1. **No human playtest recorded yet.** Every playability claim here is machine evidence only
-   until [TEST-REPORT §5](TEST-REPORT.md) and [FRICTIONAL §9](FRICTIONAL.md) are filled in.
-   An automated input route proves geometry is reachable, not that a level is any good.
+1. **One playtest, by the author, and it was brief.** A human completed the level with a
+   keyboard on 2026-09-24 and reported no problems ([TEST-REPORT §5](TEST-REPORT.md)). That
+   settles completability. It settles nothing about legibility: the player designed the level
+   and knew where every landing was. **No naive player has seen it.** Whether the fork reads as
+   a choice to someone encountering it cold is still unknown.
 2. **The film's walkthrough is partial by one feature.** Pause-on-focus-loss is implemented and
    machine-checked, but an unattended capture cannot lose window focus, so there is no footage
    of it. The skill's coverage check therefore **fails on that one item by design** — it was not

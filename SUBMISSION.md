@@ -61,9 +61,11 @@ pinned by a regression check.
 
 ## Known limitations
 
-1. **No human playtest recorded.** Every playability claim is machine evidence only.
-   TEST-REPORT §5 and FRICTIONAL §9 are deliberately empty rather than filled with invented
-   feedback. An automated input route proves reachability, not playability.
+1. **One brief playtest, by the author.** A human completed the level with a keyboard on
+   2026-09-24 and reported no problems. Recorded verbatim in TEST-REPORT §5 and FRICTIONAL §9,
+   along with what it does *not* establish. The player built the level, so this says nothing
+   about first-time legibility, and the fork-pad take-off window remains calculated rather than
+   measured. No naive playtester has been recruited.
 2. **The explainer film is not produced** — blocked, see below.
 3. The fork-pad entry jump is the tightest input in the level (≈46 px run-up window);
    that figure is calculated, not measured.

@@ -214,18 +214,37 @@ evidence receipts do, and the receipts are timestamped independently
 
 ---
 
-## 9. Human playtest
+## 9. Human playtest — done, and thinner than I wanted
 
-**NOT YET DONE. This section is deliberately empty.**
+**2026-09-24.** Played the build at `cc8ae01` with a keyboard, in a normal game window.
 
-The build at commit `adc7f4e` has been launched in a normal game window, but the actual play
-session has not happened yet. When it does, this section records what actually occurred —
-including anything that went badly, and including the possibility that the fork does not read
-as a choice at all when a person is moving at speed rather than following a scripted route.
+**What I reported, in full:** *"我试玩了，没有问题，可以通关"* — I played it, no problems,
+can complete it.
 
-Nothing in this file or in TEST-REPORT.md currently claims otherwise: TEST-REPORT §5 and §6.1
-both state that every playability claim in this project is machine evidence only until this
-section is filled in.
+**What I learned:** the level is completable by a person, not just by the driver. That was the
+one thing a scripted route genuinely could not tell me, and now it is settled.
+
+**What I did not learn, and should be honest about.** I wrote this down as one sentence, and one
+sentence is not a playtest report. I did not record which line I took, whether I ever tried the
+other one, whether the fork-pad jump felt tight, or where I nearly died. So the specific
+uncertainty I have been carrying since §10 — the ~46 px take-off window that is *calculated and
+never measured* — is **still untested**. My own play did not measure it, and "it felt fine" from
+the person who placed the platform is close to worthless as evidence.
+
+**The deeper problem with this playtest:** I built the level. I knew where every landing, hazard
+and pit was before I pressed Enter. I cannot test whether the fork reads as a choice, because I
+already knew it was one. Completing a level you designed proves the geometry works; it proves
+nothing about legibility.
+
+**What I would do next, in order:**
+
+1. Hand it to one person who has never seen it, say nothing, and watch where they die.
+2. Run the take-off-window sweep — the prompt the film hands the viewer — so the fork-pad jump
+   becomes a number instead of a feeling.
+
+**Human / AI.** Entirely human: the AI did not play the game and does not claim to have. It
+recorded this session in my words and wrote down what the session does not cover, rather than
+expanding one sentence into a report I did not give it.
 
 ---
 

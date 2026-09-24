@@ -240,24 +240,51 @@ Observation: in the first character contact sheet, the two 6 px boots met at x=0
 
 ## 5. Human playtest
 
-> **NOT YET RECORDED.** The automated route drivers above prove the geometry is
-> reachable with ordinary inputs; they do **not** prove the level is playable,
-> legible or enjoyable, and this assignment explicitly does not let an input
-> route stand in for a person. This section will be filled in with the actual
-> result of playing the build at commit `adc7f4e` with a keyboard, and will
-> record what actually happened including anything that went badly.
->
-> To be recorded: route taken, whether the fork read as a choice, where deaths
-> happened and why, whether the retry felt fast enough, whether the relocated
-> finish was findable, and replay after completion.
+**Done. 2026-09-24. Player: Zhaohui Li (the author). Build: commit `cc8ae01`,
+run from `godot --path godot` in a normal game window with a keyboard.**
 
-No second playtester has been recruited, so no second-person feedback is claimed.
+### What the player actually reported
+
+Verbatim, in full:
+
+> 我试玩了，没有问题，可以通关
+> *("I playtested it, no problems, can complete it.")*
+
+### What that establishes
+
+- A human, playing with a keyboard rather than a scripted driver, **reached the
+  relocated finish**. Completion is no longer only a machine claim.
+- Nothing blocked, crashed, soft-locked or read as broken badly enough to be
+  worth mentioning.
+
+### What that does NOT establish — stated plainly
+
+This is a brief report, and it is recorded as brief rather than written up into
+something it is not. It does **not** answer the questions this report has been
+flagging as open since §6:
+
+| Open question | Still open? |
+|---|---|
+| Does the fork-pad entry jump feel tight? (calculated ~46 px window, never measured) | **Yes** — not reported on |
+| Did the fork read as a *choice*, or did momentum pick the line? | **Yes** — not reported on |
+| Which route was taken; was the other one ever tried? | **Yes** — not reported |
+| Where did deaths happen, and did the ~0.55 s retry feel fast enough? | **Yes** — no deaths reported, none described |
+| Was the relocated finish findable without prior knowledge? | **No** — the player authored the level, so they cannot test discoverability |
+
+**The author is not a naive player.** They knew where every landing and hazard
+was before starting, so this session cannot speak to first-time legibility,
+difficulty, or whether the fork communicates itself. That is the single most
+important thing still untested about this level, and one playtest by the person
+who built it cannot fix it.
+
+No second playtester has been recruited. No second-person feedback is claimed
+anywhere in this repository.
 
 ---
 
 ## 6. Honest limitations
 
-1. **No human playtest recorded yet** (§5). Every playability claim in this document is currently machine evidence only.
+1. **The only playtest is the author's, and it is one sentence long** (§5). It establishes that a person can complete the level. It cannot establish first-time legibility, because the player designed the level and knew the layout before starting. No naive player has seen this build.
 2. **The automated routes are one input each.** `complete-real-route-low/high` prove *a* path exists; they say nothing about the width of the timing window a real player has. The tightest jump in Zone 03 is the fork-pad entry, where my arithmetic puts the usable take-off window at roughly 46 px of run-up (≈0.29 s). That number is calculated, **not measured**, and is exactly the sort of thing a human playtest should overturn.
 3. **Label placement is unverified by any check.** See cycle 2.
 4. **The contact sheet is a fixture, not gameplay.** `05-character-states.png` freezes the body deliberately (`enabled = false`, velocity assigned) to render six poses side by side. It is a reconstructed diagram of real draw output, and is labelled as such — it is not a screenshot of play.
